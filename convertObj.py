@@ -3,9 +3,9 @@ from pathlib import Path
 import pprint
 import os
 from enum import Enum
+import copy
 
 path = sys.argv[1]
-pp = pprint.PrettyPrinter(indent=4)
 print(path)
 my_file = Path(path)
 if not my_file.is_file():
@@ -13,7 +13,6 @@ if not my_file.is_file():
     sys.exit()
 
 f_size = os.stat(path).st_size
-print(f_size)
 f = open(path, "rb")
 
 all_data = []
@@ -28,12 +27,19 @@ class Arg():
         self.name = name
         self.func = func
 
+    def __str__(self):
+        return self.name
+
 class Opcode():
     
-    def __init__(self, name, check_hex, *args):
+    def __init__(self, name, check_hex, *args, is_data=False):
         self.args = args
         self.name = name
         self.check_hex = list(check_hex)
+        self.is_data = is_data
+
+    def copy(self):
+        return copy.deepcopy(self)
 
     def load_data(self, data):
 
@@ -57,7 +63,10 @@ class Opcode():
         values = []
         for a in self.args:
             values.append(a.func(data))
-        self.values = values
+        copy = self.copy()
+        copy.values = values
+        copy.__dict__.update({self.args[i].name: values[i] for i in range(0, len(values))})
+        return copy
 
     def __str__(self):
         str_args = ""
@@ -70,7 +79,7 @@ class Opcode():
                 str_args += str(self.values[i])
             if i != len(self.args) - 1:
                 str_args += ", "
-        return (self.name + "(" + str_args + ")" ) if not self.is_data else "-- DATA --"
+        return (self.name + "(" + str_args + ")" ) if not self.is_data else "-- ? --"
 
 def mask(x, arg):
     val = 0
@@ -219,7 +228,42 @@ opcode_data = {
             Arg("centerR", lambda x: mask(x, 0x02)),
             Arg("widthR", lambda x: mask(x, 0x0C)),
             Arg("scaleR", lambda x: mask(x, 0x01))),
-            
+        0xF7: Opcode("gsDPSetFillColor", "F7000000cccccccc",
+            Arg("color", lambda x: mask(x, 0x0F))),
+        0xF8: Opcode("gsDPSetFogColor", "F8000000rrggbbaa",
+            Arg("R", lambda x: mask(x, 0x08)),
+            Arg("G", lambda x: mask(x, 0x04)),
+            Arg("B", lambda x: mask(x, 0x02)),
+            Arg("A", lambda x: mask(x, 0x01))),
+        0xF9: Opcode("gsDPBlendColor", "F9000000rrggbbaa",
+            Arg("R", lambda x: mask(x, 0x08)),
+            Arg("G", lambda x: mask(x, 0x04)),
+            Arg("B", lambda x: mask(x, 0x02)),
+            Arg("A", lambda x: mask(x, 0x01))),
+        0xFA: Opcode("gsDPSetPrimColor", "FA000000rrggbbaa",
+            Arg("minlevel", lambda x: mask(x, 0x20)),
+            Arg("lodfrac", lambda x: mask(x, 0x10)),
+            Arg("R", lambda x: mask(x, 0x08)),
+            Arg("G", lambda x: mask(x, 0x04)),
+            Arg("B", lambda x: mask(x, 0x02)),
+            Arg("A", lambda x: mask(x, 0x01))),
+        0xFB: Opcode("gsDPSetEnvColor", "FB000000rrggbbaa",
+            Arg("R", lambda x: mask(x, 0x08)),
+            Arg("G", lambda x: mask(x, 0x04)),
+            Arg("B", lambda x: mask(x, 0x02)),
+            Arg("A", lambda x: mask(x, 0x01))),
+        0xFD: Opcode("gsDPSetTextureImage", "FD0wwwiiiiiiiiFS",
+            Arg("fmt", lambda x: mask(x, 0x40) >> 20),
+            Arg("siz", lambda x: (mask(x, 0x40) >> 12) & 0x3),
+            Arg("width", lambda x: mask(x, 0x30)),
+            Arg("imgaddr", lambda x: mask(x, 0x0F))),
+        0xFE: Opcode("gsDPSetDepthImage", "FE000000iiiiiiii",
+            Arg("imgaddr", lambda x: mask(x, 0x0F))),
+        0xFF: Opcode("gsDPSetColorImage", "FF0wwwiiiiiiiiFS",
+            Arg("fmt", lambda x: mask(x, 0x40) >> 20),
+            Arg("siz", lambda x: (mask(x, 0x40) >> 12) & 0x3),
+            Arg("width", lambda x: mask(x, 0x30)),
+            Arg("imgaddr", lambda x: mask(x, 0x0F)))
 
 
 
@@ -228,6 +272,9 @@ opcode_data = {
 
 iterator = iter(all_data)
 line = 0
+
+opcodes = []
+
 while(True):
     data = ""
     try:
@@ -249,15 +296,26 @@ while(True):
         elif(code == 7):
             print("Converting quad to 2 triangles")
             code = 6
-            opcode = opcode_data[code]
-            opcode.load_data(int.from_bytes(data, 'big'))
+            opcode_raw = opcode_data[code]
+            opcode = opcode_raw.load_data(int.from_bytes(data, 'big'))
             line += 1
         else:
-            opcode = opcode_data[code]
-            opcode.load_data(int.from_bytes(data, 'big'))
+            opcode_raw = opcode_data[code]
+            opcode = opcode_raw.load_data(int.from_bytes(data, 'big'))
             line += 1
-        print(hex(line) + "    " + str(opcode))
     else:
-        print("Opcode not found " + str(code))
         line += 1
+        opcode = None
+
+    opcodes.append(opcode)
+
+for opcode in opcodes:
+    if opcode != None and opcode.name == "gsSPVertex" and not opcode.is_data:
+        start_offset = int(mask(opcode.vaddr, 0x07) / 8)
+        for line in range(start_offset, start_offset + opcode.numv):
+            opcodes[line] = " -- VERTEX DATA -- "
+
+for line, opcode in enumerate(opcodes):
+    print(str(hex(line)) + "  " + str(opcode))
+
 
