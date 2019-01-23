@@ -42,7 +42,7 @@ class Opcode():
         return copy.deepcopy(self)
 
     def load_data(self, data):
-
+        self.raw_data = data
         self.is_data = False
 
         try:
@@ -79,7 +79,7 @@ class Opcode():
                 str_args += str(self.values[i])
             if i != len(self.args) - 1:
                 str_args += ", "
-        return (self.name + "(" + str_args + ")" ) if not self.is_data else "-- ? --"
+        return (self.name + "(" + str_args + ")" ) if not self.is_data else "-- Unknown -- 0x" + str(hex(self.raw_data))[2:].zfill(16)
 
 def mask(x, arg):
     val = 0
@@ -124,146 +124,195 @@ class G_MWMEM(Enum):
     G_MV_MATRIX = 14
 
 opcode_data = {
-        0: Opcode("gsDPNoOpTag", "00000000tttttttt", Arg("tag", lambda x: mask(x, 0x0F))),
+        0: Opcode("gsDPNoOpTag", "00000000tttttttt", 
+            Arg("tag",      lambda x: mask(x, 0x0F))),
         1: Opcode("gsSPVertex", "010nn0aavvvvvvvv",
-            Arg("vaddr", lambda x: mask(x, 0x0F)),
-            Arg("numv", lambda x: mask(x, 0x60) >> 4),
-            Arg("vbidx", lambda x: (mask(x, 0x10) >> 1) - (mask(x, 0x60) >> 8))),
+            Arg("vaddr",    lambda x: mask(x, 0x0F)),
+            Arg("numv",     lambda x: mask(x, 0x60) >> 4),
+            Arg("vbidx",    lambda x: (mask(x, 0x10) >> 1) - (mask(x, 0x60) >> 8))),
         2: Opcode("gsSPModifyVertex", "02wwnnnnvvvvvvvv",
-            Arg("vbidx", lambda x: mask(x, 0x30)/2), 
-            Arg("where", lambda x: mask(x, 0x40)), 
-            Arg("val", lambda x: mask(x, 0x0F))),
+            Arg("vbidx",    lambda x: mask(x, 0x30)/2), 
+            Arg("where",    lambda x: mask(x, 0x40)), 
+            Arg("val",      lambda x: mask(x, 0x0F))),
         3: Opcode("gsSPCullDisplayList", "0300vvvv0000wwww",
-            Arg("vfirst", lambda x: mask(x, 0x30)/2), 
-            Arg("vlast", lambda x: mask(x, 0x03)/2)),
+            Arg("vfirst",   lambda x: mask(x, 0x30)/2), 
+            Arg("vlast",    lambda x: mask(x, 0x03)/2)),
         5: Opcode("gsSP1Triangle", "05aabbcc00000000",
-            Arg("v0", lambda x: mask(x, 0x40)/2), 
-            Arg("v1", lambda x: mask(x, 0x20)/2), 
-            Arg("v2", lambda x: mask(x, 0x10)/2)),
+            Arg("v0",       lambda x: mask(x, 0x40)/2), 
+            Arg("v1",       lambda x: mask(x, 0x20)/2), 
+            Arg("v2",       lambda x: mask(x, 0x10)/2)),
         6: Opcode("gsSP2Triangle", "06aabbcc00ddeeff",
-            Arg("v00", lambda x: mask(x, 0x40)/2), 
-            Arg("v01", lambda x: mask(x, 0x20)/2), 
-            Arg("v02", lambda x: mask(x, 0x10)/2),
-            Arg("v10", lambda x: mask(x, 0x04)/2),
-            Arg("v11", lambda x: mask(x, 0x02)/2), 
-            Arg("v12", lambda x: mask(x, 0x01)/2)),
+            Arg("v00",      lambda x: mask(x, 0x40)/2), 
+            Arg("v01",      lambda x: mask(x, 0x20)/2), 
+            Arg("v02",      lambda x: mask(x, 0x10)/2),
+            Arg("v10",      lambda x: mask(x, 0x04)/2),
+            Arg("v11",      lambda x: mask(x, 0x02)/2), 
+            Arg("v12",      lambda x: mask(x, 0x01)/2)),
 
         0xD3: Opcode("G_SPECIAL_3", "D3??????????????"),
         0xD4: Opcode("G_SPECIAL_2", "D2??????????????"),
         0xD5: Opcode("G_SPECIAL_1", "D1??????????????"),
 
         0xD7: Opcode("gsSPTexture", "D700nnssssttttBB",
-            Arg("scaleS", lambda x: mask(x, 0x18)),
-            Arg("scaleT", lambda x: mask(x, 0x06)),
-            Arg("level", lambda x: (x & 0x31) >> 3),
-            Arg("tile", lambda x: (x & 0x3)),
-            Arg("on", lambda x: mask(x, 0x20))),
+            Arg("scaleS",   lambda x: mask(x, 0x18)),
+            Arg("scaleT",   lambda x: mask(x, 0x06)),
+            Arg("level",    lambda x: (x & 0x31) >> 3),
+            Arg("tile",     lambda x: (x & 0x3)),
+            Arg("on",       lambda x: mask(x, 0x20))),
         0xD8: Opcode("gsSPPopMatrixN", "D8380002aaaaaaaa",
-            Arg("which", lambda x: 0),
-            Arg("num", lambda x: mask(x, 0x0F) * 64)),
+            Arg("which",    lambda x: 0),
+            Arg("num",      lambda x: mask(x, 0x0F) * 64)),
         0xD9: Opcode("gsSPGeomentryMode", "D9ccccccssssssss",
-            Arg("clearbits", lambda x: ~mask(x, 0x70)),
-            Arg("setbits", lambda x: mask(x, 0x0F))),
+            Arg("clearbits",lambda x: ~mask(x, 0x70)),
+            Arg("setbits",  lambda x: mask(x, 0x0F))),
         0xDA: Opcode("gsSPMatrix", "DA3800ppmmmmmmmm",
-            Arg("mtxaddr", lambda x: mask(x, 0x0F)),
-            Arg("params", lambda x: (mask(x, 0x10)))),
+            Arg("mtxaddr",  lambda x: mask(x, 0x0F)),
+            Arg("params",   lambda x: (mask(x, 0x10)))),
         0xDB: Opcode("gsMoveWd","DBiioooodddddddd",
-            Arg("index", lambda x: (mask(x, 0x40))),
-            Arg("offset", lambda x: mask(x, 0x30)),
-            Arg("data", lambda x: mask(x, 0x0F))),
+            Arg("index",    lambda x: (mask(x, 0x40))),
+            Arg("offset",   lambda x: mask(x, 0x30)),
+            Arg("data",     lambda x: mask(x, 0x0F))),
         0xDC: Opcode("gsMoveMem", "DCnnooiiaaaaaaaa",
-            Arg("size", lambda x: (((mask(x, 0x40) >> 3) + 1) * 8)),
-            Arg("index", lambda x: (mask(x, 0x10))),
-            Arg("offset", lambda x: mask(x, 0x20) * 8),
-            Arg("address", lambda x: mask(x, 0x0F))),
+            Arg("size",     lambda x: (((mask(x, 0x40) >> 3) + 1) * 8)),
+            Arg("index",    lambda x: (mask(x, 0x10))),
+            Arg("offset",   lambda x: mask(x, 0x20) * 8),
+            Arg("address",  lambda x: mask(x, 0x0F))),
         0xDE: Opcode("gsSPBranch/DisplayList", "DEpp0000dddddddd",
-            Arg("branchOrDisplay", lambda x: mask(x, 0x40)),
-            Arg("address", lambda x: mask(x, 0x0F))),
+            Arg("flag",     lambda x: mask(x, 0x40)),
+            Arg("address",  lambda x: mask(x, 0x0F))),
         0xDF: Opcode("gsSPEndDisplayList", "DF00000000000000"),
         0xE0: Opcode("gsSpNoOp", "E000000000000000"),
         0xE1: Opcode("gsDPWord", "E1000000hhhhhhhh",
-            Arg("wordhi", lambda x: mask(x, 0x0F))),
+            Arg("wordhi",   lambda x: mask(x, 0x0F))),
         0xE2: Opcode("gsSPSetOtherMode", "E200ssnndddddddd",
-            Arg("const", lambda x: 0xE2),
-            Arg("shift", lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
-            Arg("length", lambda x: mask(x, 0x01) + 1),
-            Arg("Idata", lambda x: mask(x, 0x0F))),
+            Arg("const",    lambda x: 0xE2),
+            Arg("shift",    lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
+            Arg("length",   lambda x: mask(x, 0x01) + 1),
+            Arg("Idata",    lambda x: mask(x, 0x0F))),
         0xE3: Opcode("gsSPSetOtherMode", "E300ssnndddddddd",
-            Arg("const", lambda x: 0xE3),
-            Arg("sIhift", lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
-            Arg("length", lambda x: mask(x, 0x01) + 1),
-            Arg("data", lambda x: mask(x, 0x0F))),
+            Arg("const",    lambda x: 0xE3),
+            Arg("sIhift",   lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
+            Arg("length",   lambda x: mask(x, 0x01) + 1),
+            Arg("data",     lambda x: mask(x, 0x0F))),
         0xE4: Opcode("gsSPTextireRectangle", "E4xxxyyy0iXXXYYYE1000000ssssttttF1000000ddddeeee",
-            Arg("ulx", lambda x: mask(x[0], 0x06) >> 24),
-            Arg("uly", lambda x: mask(x[0], 0x03) & 0xFFF),
-            Arg("lrxI", lambda x: mask(x[0], 0x60) >> 24),
-            Arg("lry", lambda x: mask(x[0], 0x30) & 0xFFF),
-            Arg("tile", lambda x: mask(x[0], 0x08)),
-            Arg("uls", lambda x: mask(x[1], 0x0C)),
-            Arg("ult", lambda x: mask(x[1], 0x03)),
-            Arg("dsdx", lambda x: mask(x[2], 0x0C)),
-            Arg("dtdy", lambda x: mask(x[2], 0x03))),
+            Arg("ulx",      lambda x: mask(x[0], 0x06) >> 24),
+            Arg("uly",      lambda x: mask(x[0], 0x03) & 0xFFF),
+            Arg("lrxI",     lambda x: mask(x[0], 0x60) >> 24),
+            Arg("lry",      lambda x: mask(x[0], 0x30) & 0xFFF),
+            Arg("tile",     lambda x: mask(x[0], 0x08)),
+            Arg("uls",      lambda x: mask(x[1], 0x0C)),
+            Arg("ult",      lambda x: mask(x[1], 0x03)),
+            Arg("dsdx",     lambda x: mask(x[2], 0x0C)),
+            Arg("dtdy",     lambda x: mask(x[2], 0x03))),
         0xE5: Opcode("gsSPTextireRectangleFlip", "E4xxxyyy0iXXXYYYE1000000ssssttttF1000000ddddeeee",
-            Arg("ulx", lambda x: mask(x[0], 0x06) >> 24),
-            Arg("uly", lambda x: mask(x[0], 0x03) & 0xFFF),
-            Arg("lrx", lambda x: mask(x[0], 0x60) >> 24),
-            Arg("lry", lambda x: mask(x[0], 0x30) & 0xFFF),
-            Arg("tile", lambda x: mask(x[0], 0x08)),
-            Arg("uls", lambda x: mask(x[1], 0x0C)),
-            Arg("ult", lambda x: mask(x[1], 0x03)),
-            Arg("dsdx", lambda x: mask(x[2], 0x0C)),
-            Arg("dtdy", lambda x: mask(x[2], 0x03))),
+            Arg("ulx",      lambda x: mask(x[0], 0x06) >> 24),
+            Arg("uly",      lambda x: mask(x[0], 0x03) & 0xFFF),
+            Arg("lrx",      lambda x: mask(x[0], 0x60) >> 24),
+            Arg("lry",      lambda x: mask(x[0], 0x30) & 0xFFF),
+            Arg("tile",     lambda x: mask(x[0], 0x08)),
+            Arg("uls",      lambda x: mask(x[1], 0x0C)),
+            Arg("ult",      lambda x: mask(x[1], 0x03)),
+            Arg("dsdx",     lambda x: mask(x[2], 0x0C)),
+            Arg("dtdy",     lambda x: mask(x[2], 0x03))),
         0xE6: Opcode("gsDPLoadSync", "E600000000000000"),
         0xE7: Opcode("gsDPPipeSync", "E700000000000000"),
         0xE8: Opcode("gsDPTileSync", "E800000000000000"),
         0xE9: Opcode("gsDPFullSync", "E900000000000000"),
         0xEA: Opcode("gsDPSetKeyGB", "EAwwwxxxccssddtt",
-            Arg("centerG", lambda x: mask(x, 0x08)),
-            Arg("scaleG", lambda x: mask(x, 0x04)),
-            Arg("widthG", lambda x: mask(x, 0x60) >> 8),
-            Arg("centerB", lambda x: mask(x, 0x02)),
-            Arg("scaleB", lambda x: mask(x, 0x01)),
-            Arg("widthB", lambda x: mask(x, 0x30) & 0xFFF)),
+            Arg("centerG",  lambda x: mask(x, 0x08)),
+            Arg("scaleG",   lambda x: mask(x, 0x04)),
+            Arg("widthG",   lambda x: mask(x, 0x60) >> 8),
+            Arg("centerB",  lambda x: mask(x, 0x02)),
+            Arg("scaleB",   lambda x: mask(x, 0x01)),
+            Arg("widthB",   lambda x: mask(x, 0x30) & 0xFFF)),
         0xEB: Opcode("gsDPSetKeyR", "EB0000000wwwccss",
-            Arg("centerR", lambda x: mask(x, 0x02)),
-            Arg("widthR", lambda x: mask(x, 0x0C)),
-            Arg("scaleR", lambda x: mask(x, 0x01))),
+            Arg("centerR",  lambda x: mask(x, 0x02)),
+            Arg("widthR",   lambda x: mask(x, 0x0C)),
+            Arg("scaleR",   lambda x: mask(x, 0x01))),
+        0xF2: Opcode("gsDPSetTileSize", "F2sssttt0iuuuvvv",
+            Arg("tile",     lambda x: mask(x, 0x08)),
+            Arg("uls",      lambda x: mask(x, 0x60) >> 4),
+            Arg("ult",      lambda x: mask(x, 0x30) & 0xFFF),
+            Arg("lrs",      lambda x: mask(x, 0x06) >> 4),
+            Arg("lrt",      lambda x: x & 0xFFF)),
+        0xF3: Opcode("gsDPLoadBlock", "F3sssttt0iuuuvvv",
+            Arg("tile",     lambda x: mask(x, 0x08)),
+            Arg("uls",      lambda x: mask(x, 0x60) >> 4),
+            Arg("ult",      lambda x: mask(x, 0x30) & 0xFFF),
+            Arg("texels",   lambda x: mask(x, 0x06) >> 4),
+            Arg("dxt",      lambda x: x & 0xFFF)),
+        0xF4: Opcode("gsDPLoadTile", "F4sssttt0iuuuvvv",
+            Arg("tile",     lambda x: mask(x, 0x08)),
+            Arg("uls",      lambda x: mask(x, 0x60) >> 4),
+            Arg("ult",      lambda x: mask(x, 0x30) & 0xFFF),
+            Arg("lrs",      lambda x: mask(x, 0x06) >> 4),
+            Arg("lrt",      lambda x: x & 0xFFF)),
+        0xF5: Opcode("gsDPSetTile", "F5FINNMM0TPCSSBU",
+            Arg("fmt",      lambda x: (x & 0x00E0000000000000) >> (13*4+1)),
+            Arg("siz",      lambda x: (x & 0x0018000000000000) >> (12*4+3)),
+            Arg("line",     lambda x: (x & 0x0003FE0000000000) >> (10*4+1)),
+            Arg("tmem",     lambda x: (x & 0x000001FF00000000) >> ( 8*4+0)),
+            Arg("tile",     lambda x: (x & 0x0000000007000000) >> ( 6*4+0)),
+            Arg("palette",  lambda x: (x & 0x0000000000F00000) >> ( 5*4+0)),
+            Arg("cmT",      lambda x: (x & 0x00000000000C0000) >> ( 4*4+2)),
+            Arg("maskT",    lambda x: (x & 0x000000000003C000) >> ( 3*4+2)),
+            Arg("shiftT",   lambda x: (x & 0x0000000000003C00) >> ( 2*4+2)),
+            Arg("cmS",      lambda x: (x & 0x0000000000000300) >> ( 2*4+0)),
+            Arg("maskS",    lambda x: (x & 0x00000000000000F0) >> ( 1*4+0)),
+            Arg("shiftS",   lambda x: (x & 0x000000000000000F) >> ( 0*4+0))),
         0xF7: Opcode("gsDPSetFillColor", "F7000000cccccccc",
-            Arg("color", lambda x: mask(x, 0x0F))),
+            Arg("color",    lambda x: mask(x, 0x0F))),
         0xF8: Opcode("gsDPSetFogColor", "F8000000rrggbbaa",
-            Arg("R", lambda x: mask(x, 0x08)),
-            Arg("G", lambda x: mask(x, 0x04)),
-            Arg("B", lambda x: mask(x, 0x02)),
-            Arg("A", lambda x: mask(x, 0x01))),
+            Arg("R",        lambda x: mask(x, 0x08)),
+            Arg("G",        lambda x: mask(x, 0x04)),
+            Arg("B",        lambda x: mask(x, 0x02)),
+            Arg("A",        lambda x: mask(x, 0x01))),
         0xF9: Opcode("gsDPBlendColor", "F9000000rrggbbaa",
-            Arg("R", lambda x: mask(x, 0x08)),
-            Arg("G", lambda x: mask(x, 0x04)),
-            Arg("B", lambda x: mask(x, 0x02)),
-            Arg("A", lambda x: mask(x, 0x01))),
-        0xFA: Opcode("gsDPSetPrimColor", "FA000000rrggbbaa",
+            Arg("R",        lambda x: mask(x, 0x08)),
+            Arg("G",        lambda x: mask(x, 0x04)),
+            Arg("B",        lambda x: mask(x, 0x02)),
+            Arg("A",        lambda x: mask(x, 0x01))),
+        0xFA: Opcode("gsDPSetPrimColor", "FA00mmffrrggbbaa",
             Arg("minlevel", lambda x: mask(x, 0x20)),
-            Arg("lodfrac", lambda x: mask(x, 0x10)),
-            Arg("R", lambda x: mask(x, 0x08)),
-            Arg("G", lambda x: mask(x, 0x04)),
-            Arg("B", lambda x: mask(x, 0x02)),
-            Arg("A", lambda x: mask(x, 0x01))),
+            Arg("lodfrac",  lambda x: mask(x, 0x10)),
+            Arg("R",        lambda x: mask(x, 0x08)),
+            Arg("G",        lambda x: mask(x, 0x04)),
+            Arg("B",        lambda x: mask(x, 0x02)),
+            Arg("A",        lambda x: mask(x, 0x01))),
         0xFB: Opcode("gsDPSetEnvColor", "FB000000rrggbbaa",
-            Arg("R", lambda x: mask(x, 0x08)),
-            Arg("G", lambda x: mask(x, 0x04)),
-            Arg("B", lambda x: mask(x, 0x02)),
-            Arg("A", lambda x: mask(x, 0x01))),
-        0xFD: Opcode("gsDPSetTextureImage", "FD0wwwiiiiiiiiFS",
-            Arg("fmt", lambda x: mask(x, 0x40) >> 20),
-            Arg("siz", lambda x: (mask(x, 0x40) >> 12) & 0x3),
-            Arg("width", lambda x: mask(x, 0x30)),
-            Arg("imgaddr", lambda x: mask(x, 0x0F))),
+            Arg("R",        lambda x: mask(x, 0x08)),
+            Arg("G",        lambda x: mask(x, 0x04)),
+            Arg("B",        lambda x: mask(x, 0x02)),
+            Arg("A",        lambda x: mask(x, 0x01))),
+        0xFC: Opcode("gsDPSetTile", "FCACZXEGFVTDWHUS",
+            Arg("a0",    lambda x: (x & 0x00F0000000000000) >> (13*4+0)),
+            Arg("b0",    lambda x: (x & 0x00000000F0000000) >> ( 7*4+0)),
+            Arg("c0",    lambda x: (x & 0x000F100000000000) >> (11*4+3)),
+            Arg("d0",    lambda x: (x & 0x0000000000038000) >> ( 3*4+3)),
+            Arg("Aa0",   lambda x: (x & 0x0000700000000000) >> (11*4+0)),
+            Arg("Ab0",   lambda x: (x & 0x0000000000007000) >> ( 3*4+0)),
+            Arg("Ac0",   lambda x: (x & 0x00000E0000000000) >> (10*4+1)),
+            Arg("Ad0",   lambda x: (x & 0x0000000000000E00) >> ( 2*4+1)),
+            Arg("a1",    lambda x: (x & 0x000001E000000000) >> ( 9*4+1)),
+            Arg("b1",    lambda x: (x & 0x000000000F000000) >> ( 6*4+0)),
+            Arg("c1",    lambda x: (x & 0x0000001F00000000) >> ( 8*4+0)),
+            Arg("d1",    lambda x: (x & 0x00000000000001C0) >> ( 1*4+2)),
+            Arg("Aa1",   lambda x: (x & 0x0000000000E00000) >> ( 5*4+1)),
+            Arg("Ab1",   lambda x: (x & 0x0000000000000038) >> ( 0*4+3)),
+            Arg("Ac1",   lambda x: (x & 0x00000000001C0000) >> ( 4*4+2)),
+            Arg("Ad1",   lambda x: (x & 0x0000000000000003) >> ( 0*4+0))),
+        0xFD: Opcode("gsDPSetTextureImage", "FDFS0wwwiiiiiiii",
+            Arg("fmt",      lambda x: mask(x, 0x40) >> 20),
+            Arg("siz",      lambda x: (mask(x, 0x40) >> 12) & 0x3),
+            Arg("width",    lambda x: mask(x, 0x30)),
+            Arg("imgaddr",  lambda x: mask(x, 0x0F))),
         0xFE: Opcode("gsDPSetDepthImage", "FE000000iiiiiiii",
-            Arg("imgaddr", lambda x: mask(x, 0x0F))),
-        0xFF: Opcode("gsDPSetColorImage", "FF0wwwiiiiiiiiFS",
-            Arg("fmt", lambda x: mask(x, 0x40) >> 20),
-            Arg("siz", lambda x: (mask(x, 0x40) >> 12) & 0x3),
-            Arg("width", lambda x: mask(x, 0x30)),
-            Arg("imgaddr", lambda x: mask(x, 0x0F)))
+            Arg("imgaddr",  lambda x: mask(x, 0x0F))),
+        0xFF: Opcode("gsDPSetColorImage", "FFFS0wwwiiiiiiii",
+            Arg("fmt",      lambda x: mask(x, 0x40) >> 20),
+            Arg("siz",      lambda x: (mask(x, 0x40) >> 12) & 0x3),
+            Arg("width",    lambda x: mask(x, 0x30)),
+            Arg("imgaddr",  lambda x: mask(x, 0x0F)))
 
 
 
@@ -274,7 +323,7 @@ iterator = iter(all_data)
 line = 0
 
 opcodes = []
-
+raw_data = []
 while(True):
     data = ""
     try:
@@ -289,33 +338,35 @@ while(True):
             multi_line.append( int.from_bytes(next(iterator), 'big'))
             multi_line.append( int.from_bytes(next(iterator), 'big'))
             opcode.load_data(multi_line)
+            raw = multi_line
             line += 3
-        elif(code == 4 or code == 0xDD):
-            print("\n\n\nTODO code 4\n\n\n")
-            line += 1
         elif(code == 7):
             print("Converting quad to 2 triangles")
             code = 6
             opcode_raw = opcode_data[code]
             opcode = opcode_raw.load_data(int.from_bytes(data, 'big'))
+            raw = data
             line += 1
         else:
             opcode_raw = opcode_data[code]
             opcode = opcode_raw.load_data(int.from_bytes(data, 'big'))
+            raw = data
             line += 1
     else:
         line += 1
         opcode = None
+        raw = data
 
     opcodes.append(opcode)
+    raw_data.append(None if raw == None else int.from_bytes(raw, 'big'))
 
 for opcode in opcodes:
     if opcode != None and opcode.name == "gsSPVertex" and not opcode.is_data:
         start_offset = int(mask(opcode.vaddr, 0x07) / 8)
         for line in range(start_offset, start_offset + opcode.numv):
-            opcodes[line] = " -- VERTEX DATA -- "
+            opcodes[line] = " -- VERTEX DATA -- 0x" + str(hex(raw_data[line]))[2:].zfill(16)
 
 for line, opcode in enumerate(opcodes):
-    print(str(hex(line)) + "  " + str(opcode))
+    print(str(hex(line)) + "  " + (str(opcode) if opcode != None else " -- NO ENTRY -- 0x"+str(hex(raw_data[line]))[2:].zfill(16)))
 
 
