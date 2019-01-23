@@ -1,0 +1,258 @@
+object_gi_rupy (Item Model - Rupees)
+2048
+Opcode not found 255
+0x2    -- DATA --
+Opcode not found 255
+0x4    -- DATA --
+0x5    -- DATA --
+0x6    -- DATA --
+0x7    -- DATA --
+0x8    -- DATA --
+0x9    -- DATA --
+0xa    -- DATA --
+0xb    -- DATA --
+0xc    -- DATA --
+0xd    -- DATA --
+0xe    gsSPCullDisplayList(vfirst = 603.0, vlast = 17535.5)
+0xf    -- DATA --
+0x10    gsSPModifyVertex(vbidx = 677.0, where = 0x92, val = 0x88ff)
+0x11    -- DATA --
+0x12    gsSPModifyVertex(vbidx = 859.0, where = 0x92, val = 0x88ff)
+0x13    -- DATA --
+0x14    gsSPCullDisplayList(vfirst = 933.0, vlast = 17535.5)
+Opcode not found 255
+0x16    -- DATA --
+Opcode not found 255
+0x18    -- DATA --
+0x19    -- DATA --
+0x1a    -- DATA --
+0x1b    -- DATA --
+0x1c    gsSPModifyVertex(vbidx = 663.0, where = 0x0, val = 0x512052ff)
+0x1d    -- DATA --
+0x1e    -- DATA --
+0x1f    -- DATA --
+0x20    -- DATA --
+0x21    -- DATA --
+0x22    -- DATA --
+0x23    -- DATA --
+0x24    -- DATA --
+Opcode not found 255
+0x26    -- DATA --
+Opcode not found 255
+0x28    -- DATA --
+Opcode not found 255
+0x2a    -- DATA --
+Opcode not found 255
+0x2c    -- DATA --
+0x2d    -- DATA --
+0x2e    -- DATA --
+0x2f    -- DATA --
+0x30    -- DATA --
+0x31    -- DATA --
+0x32    -- DATA --
+0x33    -- DATA --
+0x34    gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x51e052ff)
+0x35    -- DATA --
+0x36    -- DATA --
+0x37    -- DATA --
+0x38    -- DATA --
+0x39    -- DATA --
+0x3a    -- DATA --
+0x3b    -- DATA --
+0x3c    gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x413bafff)
+0x3d    -- DATA --
+0x3e    gsSPModifyVertex(vbidx = 663.0, where = 0x0, val = 0x521fafff)
+0x3f    -- DATA --
+0x40    gsSPModifyVertex(vbidx = 677.0, where = 0x92, val = 0x521fafff)
+0x41    -- DATA --
+0x42    gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x52e1afff)
+0x43    -- DATA --
+0x44    gsSPModifyVertex(vbidx = 859.0, where = 0x92, val = 0x52e1afff)
+0x45    -- DATA --
+0x46    gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x41c5afff)
+0x47    -- DATA --
+0x48    -- DATA --
+0x49    -- DATA --
+Opcode not found 255
+Opcode not found 255
+0x4c    -- DATA --
+Opcode not found 255
+Opcode not found 255
+0x4f    -- DATA --
+Opcode not found 255
+Opcode not found 255
+0x52    -- DATA --
+Opcode not found 255
+Opcode not found 255
+0x55    -- DATA --
+Opcode not found 255
+0x57    -- DATA --
+Opcode not found 255
+Opcode not found 255
+0x5a    -- DATA --
+Opcode not found 255
+0x5c    -- DATA --
+0x5d    -- DATA --
+0x5e    -- DATA --
+0x5f    -- DATA --
+0x60    -- DATA --
+0x61    -- DATA --
+0x62    -- DATA --
+0x63    -- DATA --
+0x64    -- DATA --
+0x65    -- DATA --
+0x66    -- DATA --
+0x67    -- DATA --
+0x68    gsSPModifyVertex(vbidx = 679.0, where = 0x95, val = 0x3c169bff)
+0x69    -- DATA --
+0x6a    gsSPModifyVertex(vbidx = 857.0, where = 0x95, val = 0x3cea9bff)
+0x6b    -- DATA --
+0x6c    -- DATA --
+Opcode not found 255
+0x6e    -- DATA --
+Opcode not found 255
+0x70    -- DATA --
+0x71    -- DATA --
+0x72    -- DATA --
+0x73    -- DATA --
+0x74    -- DATA --
+0x75    -- DATA --
+0x76    -- DATA --
+0x77    -- DATA --
+0x78    -- DATA --
+Opcode not found 255
+0x7a    -- DATA --
+Opcode not found 255
+0x7c    -- DATA --
+Opcode not found 255
+0x7e    -- DATA --
+Opcode not found 255
+0x80    -- DATA --
+0x81    -- DATA --
+0x82    -- DATA --
+0x83    -- DATA --
+0x84    -- DATA --
+0x85    -- DATA --
+0x86    -- DATA --
+0x87    -- DATA --
+0x88    -- DATA --
+0x89    -- DATA --
+0x8a    -- DATA --
+0x8b    -- DATA --
+0x8c    gsSPModifyVertex(vbidx = 664.0, where = 0x18, val = 0x4f5a01ff)
+0x8d    -- DATA --
+0x8e    gsSPModifyVertex(vbidx = 872.0, where = 0x18, val = 0x702901ff)
+0x8f    -- DATA --
+0x90    -- DATA --
+Opcode not found 255
+0x92    -- DATA --
+Opcode not found 255
+0x94    -- DATA --
+0x95    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0x98    gsSPEndDisplayList()
+0x99    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0x9c    gsSPEndDisplayList()
+0x9d    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xa0    gsSPEndDisplayList()
+0xa1    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xa4    gsSPEndDisplayList()
+0xa5    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xa8    gsSPEndDisplayList()
+0xa9    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xac    gsSPEndDisplayList()
+0xad    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xb0    gsSPEndDisplayList()
+0xb1    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xb4    gsSPEndDisplayList()
+0xb5    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xb8    gsSPEndDisplayList()
+0xb9    gsDPPipeSync()
+Opcode not found 250
+Opcode not found 251
+0xbc    gsSPEndDisplayList()
+0xbd    gsDPPipeSync()
+0xbe    gsSPSetOtherMode(const = 0xe2, shift = -0x87, length = 0x79, Idata = 0xc193078)
+Opcode not found 252
+0xc0    gsSPSetOtherMode(const = 0xe3, sIhift = 0x21, length = 0x1, data = 0x0)
+0xc1    gsSPTexture(scaleS = 0x20d, scaleT = 0xac0d, level = 0x4, tile = 0x0, on = 0x0)
+Opcode not found 253
+Opcode not found 245
+0xc4    gsDPLoadSync()
+Opcode not found 243
+0xc6    gsDPPipeSync()
+Opcode not found 245
+Opcode not found 242
+0xc9    gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
+0xca    gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
+0xcb    gsSPVertex(vaddr = 0x6000000, numv = 0x6, vbidx = 0x6)
+0xcc    gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0xcd    gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0xce    gsSPVertex(vaddr = 0x6000060, numv = 0x20, vbidx = 0x1e)
+0xcf    gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0xd0    gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0xd1    gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
+0xd2    gsSP2Triangle(v00 = 10.0, v01 = 11.0, v02 = 12.0, v10 = 10.0, v11 = 12.0, v12 = 13.0)
+0xd3    gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
+0xd4    gsSP2Triangle(v00 = 15.0, v01 = 14.0, v02 = 16.0, v10 = 15.0, v11 = 16.0, v12 = 17.0)
+0xd5    gsSP2Triangle(v00 = 18.0, v01 = 19.0, v02 = 20.0, v10 = 18.0, v11 = 20.0, v12 = 21.0)
+0xd6    gsSP2Triangle(v00 = 19.0, v01 = 7.0, v02 = 6.0, v10 = 19.0, v11 = 6.0, v12 = 20.0)
+0xd7    gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 24.0, v10 = 22.0, v11 = 24.0, v12 = 25.0)
+0xd8    gsSP2Triangle(v00 = 25.0, v01 = 24.0, v02 = 26.0, v10 = 25.0, v11 = 26.0, v12 = 27.0)
+0xd9    gsSP2Triangle(v00 = 27.0, v01 = 26.0, v02 = 28.0, v10 = 27.0, v11 = 28.0, v12 = 29.0)
+0xda    gsSPVertex(vaddr = 0x6000240, numv = 0x8, vbidx = 0x8)
+0xdb    gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0xdc    gsSP2Triangle(v00 = 1.0, v01 = 4.0, v02 = 5.0, v10 = 1.0, v11 = 5.0, v12 = 2.0)
+0xdd    gsSP2Triangle(v00 = 4.0, v01 = 6.0, v02 = 7.0, v10 = 4.0, v11 = 7.0, v12 = 5.0)
+0xde    gsSPEndDisplayList()
+0xdf    gsDPPipeSync()
+0xe0    gsSPSetOtherMode(const = 0xe2, shift = -0x100, length = 0xd9, Idata = 0xc1849d8)
+Opcode not found 252
+0xe2    gsSPSetOtherMode(const = 0xe3, sIhift = 0x21, length = 0x1, data = 0x0)
+0xe3    gsSPTexture(scaleS = 0x20b, scaleT = 0xb807, level = 0x2, tile = 0x0, on = 0x0)
+Opcode not found 253
+Opcode not found 245
+0xe6    gsDPLoadSync()
+Opcode not found 243
+0xe8    gsDPPipeSync()
+Opcode not found 245
+Opcode not found 242
+0xeb    gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
+0xec    gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
+0xed    gsSPVertex(vaddr = 0x60002c0, numv = 0x6, vbidx = 0x6)
+0xee    gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0xef    gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0xf0    gsSPVertex(vaddr = 0x6000320, numv = 0x18, vbidx = 0x17)
+0xf1    gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0xf2    gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0xf3    gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
+0xf4    gsSP2Triangle(v00 = 9.0, v01 = 8.0, v02 = 10.0, v10 = 9.0, v11 = 10.0, v12 = 11.0)
+0xf5    gsSP2Triangle(v00 = 11.0, v01 = 10.0, v02 = 12.0, v10 = 11.0, v11 = 12.0, v12 = 13.0)
+0xf6    gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
+0xf7    gsSP2Triangle(v00 = 14.0, v01 = 16.0, v02 = 17.0, v10 = 14.0, v11 = 17.0, v12 = 15.0)
+0xf8    gsSP2Triangle(v00 = 16.0, v01 = 7.0, v02 = 6.0, v10 = 16.0, v11 = 6.0, v12 = 17.0)
+0xf9    gsSP2Triangle(v00 = 0.0, v01 = 18.0, v02 = 19.0, v10 = 0.0, v11 = 19.0, v12 = 1.0)
+0xfa    gsSP2Triangle(v00 = 1.0, v01 = 19.0, v02 = 20.0, v10 = 1.0, v11 = 20.0, v12 = 2.0)
+0xfb    gsSP2Triangle(v00 = 2.0, v01 = 20.0, v02 = 21.0, v10 = 2.0, v11 = 21.0, v12 = 3.0)
+0xfc    gsSP2Triangle(v00 = 21.0, v01 = 22.0, v02 = 4.0, v10 = 21.0, v11 = 4.0, v12 = 3.0)
+0xfd    gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 5.0, v10 = 22.0, v11 = 5.0, v12 = 4.0)
+0xfe    gsSP2Triangle(v00 = 23.0, v01 = 18.0, v02 = 0.0, v10 = 23.0, v11 = 0.0, v12 = 5.0)
+0xff    gsSPEndDisplayList()
+0x100    gsDPNoOpTag(tag = 0x0)
