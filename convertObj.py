@@ -375,7 +375,7 @@ while(True):
 for line, opcode in enumerate(opcodes):
     if opcode != None and opcode.name == "gsSPVertex" and not opcode.is_data and mask(opcode.vaddr, 0x08) == 0x06:
         start_offset = int(mask(opcode.vaddr, 0x07) / 8)
-        for data_line in range(start_offset, start_offset + opcode.numv):
+        for data_line in range(start_offset, start_offset + opcode.numv*2):
             opcodes[data_line] = " -- VERTEX DATA (" + hex(line) + ") -- 0x" + str(hex(raw_data[data_line]))[2:].zfill(16)
 
 
