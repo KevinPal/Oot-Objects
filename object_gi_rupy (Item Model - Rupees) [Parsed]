@@ -1,257 +1,257 @@
 object_gi_rupy (Item Model - Rupees)
-0x0   -- VERTEX DATA -- 0xfff80008000a0000
-0x1   -- VERTEX DATA -- 0x0092054a000078ff
-0x2   -- VERTEX DATA -- 0xfff8fff8000a0000
-0x3   -- VERTEX DATA -- 0x009206b6000078ff
-0x4   -- VERTEX DATA -- 0x0000fff0000a0000
-0x5   -- VERTEX DATA -- 0x0100074a000078ff
-0x6  -- Unknown -- 0x0008fff8000a0000
-0x7  -- Unknown -- 0x016e06b6000078ff
-0x8  -- Unknown -- 0x00080008000a0000
-0x9  -- Unknown -- 0x016e054a000078ff
-0xa  -- Unknown -- 0x00000010000a0000
-0xb  -- Unknown -- 0x010004b6000078ff
-0xc   -- VERTEX DATA -- 0x00000010fff60000
-0xd   -- VERTEX DATA -- 0x030004b6000088ff
-0xe   -- VERTEX DATA -- 0x00080008fff60000
-0xf   -- VERTEX DATA -- 0x0292054a000088ff
-0x10   -- VERTEX DATA -- 0x0008fff8fff60000
-0x11   -- VERTEX DATA -- 0x029206b6000088ff
-0x12   -- VERTEX DATA -- 0x0000fff0fff60000
-0x13   -- VERTEX DATA -- 0x0300074a000088ff
-0x14   -- VERTEX DATA -- 0xfff8fff8fff60000
-0x15   -- VERTEX DATA -- 0x036e06b6000088ff
-0x16   -- VERTEX DATA -- 0xfff80008fff60000
-0x17   -- VERTEX DATA -- 0x036e054a000088ff
-0x18   -- VERTEX DATA -- 0x00080008000a0000
-0x19   -- VERTEX DATA -- 0x016e054a512052ff
-0x1a   -- VERTEX DATA -- 0x0010000c00000000
-0x1b   -- VERTEX DATA -- 0x0200052e512052ff
-0x1c   -- VERTEX DATA -- 0x0000001e00000000
-0x1d   -- VERTEX DATA -- 0x017a04003d3d53ff
-0x1e   -- VERTEX DATA -- 0x00000010000a0000
-0x1f   -- VERTEX DATA -- 0x010004b63d3d53ff
-0x20   -- VERTEX DATA -- 0x00000010000a0000
-0x21   -- VERTEX DATA -- 0x010004b6bd3d4eff
-0x22   -- VERTEX DATA -- 0x0000001e00000000
-0x23   -- VERTEX DATA -- 0x00860400bd3d4eff
-0x24   -- VERTEX DATA -- 0xfff0000c00000000
-0x25   -- VERTEX DATA -- 0x0000052ead204fff
-0x26   -- VERTEX DATA -- 0xfff80008000a0000
-0x27   -- VERTEX DATA -- 0x0092054aad204fff
-0x28   -- VERTEX DATA -- 0xfff0fff400000000
-0x29   -- VERTEX DATA -- 0x000006d2ade04fff
-0x2a   -- VERTEX DATA -- 0xfff8fff8000a0000
-0x2b   -- VERTEX DATA -- 0x009206b6ade04fff
-0x2c  -- Unknown -- 0x0000ffe200000000
-0x2d  -- Unknown -- 0x00860400bdc34eff
-0x2e  -- Unknown -- 0x0000fff0000a0000
-0x2f  -- Unknown -- 0x0100074abdc34eff
-0x30  -- Unknown -- 0x0000ffe200000000
-0x31  -- Unknown -- 0x017a04003dc353ff
-0x32  -- Unknown -- 0x0010fff400000000
-0x33  gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x51e052ff)
-0x34  -- Unknown -- 0x0008fff8000a0000
-0x35  -- Unknown -- 0x016e06b651e052ff
-0x36  -- Unknown -- 0x0000fff0000a0000
-0x37  -- Unknown -- 0x0100074a3dc353ff
-0x38  -- Unknown -- 0x00000010fff60000
-0x39  -- Unknown -- 0x030004b6413bafff
-0x3a  -- Unknown -- 0x0000001e00000000
-0x3b  gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x413bafff)
-0x3c  -- Unknown -- 0x0010000c00000000
-0x3d  gsSPModifyVertex(vbidx = 663.0, where = 0x0, val = 0x521fafff)
-0x3e  -- Unknown -- 0x00080008fff60000
-0x3f  gsSPModifyVertex(vbidx = 677.0, where = 0x92, val = 0x521fafff)
-0x40  -- Unknown -- 0x0010fff400000000
-0x41  gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x52e1afff)
-0x42  -- Unknown -- 0x0008fff8fff60000
-0x43  gsSPModifyVertex(vbidx = 859.0, where = 0x92, val = 0x52e1afff)
-0x44  -- Unknown -- 0x0000ffe200000000
-0x45  gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x41c5afff)
-0x46  -- Unknown -- 0x0000fff0fff60000
-0x47  -- Unknown -- 0x0300074a41c5afff
-0x48   -- VERTEX DATA -- 0x0000ffe200000000
-0x49   -- VERTEX DATA -- 0xff7a0400bdc3b2ff
-0x4a   -- VERTEX DATA -- 0xfff0fff400000000
-0x4b   -- VERTEX DATA -- 0x000006d2ade0b1ff
-0x4c   -- VERTEX DATA -- 0xfff8fff8fff60000
-0x4d   -- VERTEX DATA -- 0xff6e06b6ade0b1ff
-0x4e   -- VERTEX DATA -- 0x0000fff0fff60000
-0x4f   -- VERTEX DATA -- 0xff00074abdc3b2ff
-0x50  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0xc, imgaddr = 0x0)
-0x51  -- Unknown -- 0x0000052ead20b1ff
-0x52  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0x8, imgaddr = 0xfff60000)
-0x53  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0x54a, imgaddr = 0xad20b1ff)
-0x54  -- Unknown -- 0x0000001e00000000
-0x55  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0x400, imgaddr = 0xbd3db2ff)
-0x56  -- Unknown -- 0x00000010fff60000
-0x57  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0x4b6, imgaddr = 0xbd3db2ff)
-0x58   -- VERTEX DATA -- 0xfff6000a000d0000
-0x59   -- VERTEX DATA -- 0x0095054ec31764ff
-0x5a   -- VERTEX DATA -- 0xfff6fff6000d0000
-0x5b   -- VERTEX DATA -- 0x009506b2c3e964ff
-0x5c   -- VERTEX DATA -- 0x0000ffec000d0000
-0x5d   -- VERTEX DATA -- 0x01000744fecf6dff
-0x5e  -- Unknown -- 0x000afff6000d0000
-0x5f  -- Unknown -- 0x016b06b23ae966ff
-0x60  -- Unknown -- 0x000a000a000d0000
-0x61  -- Unknown -- 0x016b054e3a1766ff
-0x62  -- Unknown -- 0x00000014000d0000
-0x63  -- Unknown -- 0x010004bcfe316dff
-0x64   -- VERTEX DATA -- 0x00000014fff30000
-0x65   -- VERTEX DATA -- 0x030004bcff3193ff
-0x66   -- VERTEX DATA -- 0x000a000afff30000
-0x67   -- VERTEX DATA -- 0x0295054e3c169bff
-0x68   -- VERTEX DATA -- 0x000afff6fff30000
-0x69   -- VERTEX DATA -- 0x029506b23cea9bff
-0x6a   -- VERTEX DATA -- 0x0000ffecfff30000
-0x6b   -- VERTEX DATA -- 0x03000744ffcf93ff
-0x6c   -- VERTEX DATA -- 0xfff6fff6fff30000
-0x6d   -- VERTEX DATA -- 0x036b06b2c3e99cff
-0x6e   -- VERTEX DATA -- 0xfff6000afff30000
-0x6f   -- VERTEX DATA -- 0x036b054ec3179cff
-0x70   -- VERTEX DATA -- 0x000a000a000d0000
-0x71   -- VERTEX DATA -- 0x016b054e3a1766ff
-0x72   -- VERTEX DATA -- 0x0014000f00000000
-0x73   -- VERTEX DATA -- 0x01e805304f5a01ff
-0x74   -- VERTEX DATA -- 0x0000002500000000
-0x75   -- VERTEX DATA -- 0x0100041afe7701ff
-0x76   -- VERTEX DATA -- 0x00000014000d0000
-0x77   -- VERTEX DATA -- 0x010004bcfe316dff
-0x78   -- VERTEX DATA -- 0xffec000f00000000
-0x79   -- VERTEX DATA -- 0x00180530b05900ff
-0x7a   -- VERTEX DATA -- 0xfff6000a000d0000
-0x7b   -- VERTEX DATA -- 0x0095054ec31764ff
-0x7c  -- Unknown -- 0xffecfff100000000
-0x7d  -- Unknown -- 0x001806d08f2800ff
-0x7e  -- Unknown -- 0xfff6fff6000d0000
-0x7f  -- Unknown -- 0x009506b2c3e964ff
-0x80  -- Unknown -- 0x0000ffdb00000000
-0x81  -- Unknown -- 0x010007e6aab018ff
-0x82  -- Unknown -- 0x0000ffec000d0000
-0x83  -- Unknown -- 0x01000744fecf6dff
-0x84  -- Unknown -- 0x0014fff100000000
-0x85  -- Unknown -- 0x01e806d0702901ff
-0x86  -- Unknown -- 0x000afff6000d0000
-0x87  -- Unknown -- 0x016b06b23ae966ff
-0x88  -- Unknown -- 0x0000002500000000
-0x89  -- Unknown -- 0x0300041afe7701ff
-0x8a  -- Unknown -- 0x0014000f00000000
-0x8b  gsSPModifyVertex(vbidx = 664.0, where = 0x18, val = 0x4f5a01ff)
-0x8c  -- Unknown -- 0x0014fff100000000
-0x8d  gsSPModifyVertex(vbidx = 872.0, where = 0x18, val = 0x702901ff)
-0x8e  -- Unknown -- 0x0000ffdb00000000
-0x8f  -- Unknown -- 0x030007e6aab018ff
-0x90  -- Unknown -- 0xffecfff100000000
-0x91  -- Unknown -- 0x03e806d08f2800ff
-0x92  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0xf, imgaddr = 0x0)
-0x93  -- Unknown -- 0x03e80530b05900ff
-0x94  gsDPPipeSync()
-0x95  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xc8, G = 0xff, B = 0x0, A = 0xff)
-0x96  gsDPSetEnvColor(R = 0x0, G = 0x78, B = 0x0, A = 0xff)
-0x97  gsSPEndDisplayList()
-0x98  gsDPPipeSync()
-0x99  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0x0, G = 0xc8, B = 0xff, A = 0xff)
-0x9a  gsDPSetEnvColor(R = 0x0, G = 0x0, B = 0x78, A = 0xff)
-0x9b  gsSPEndDisplayList()
-0x9c  gsDPPipeSync()
-0x9d  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xc8, B = 0x0, A = 0xff)
-0x9e  gsDPSetEnvColor(R = 0x82, G = 0x0, B = 0x0, A = 0xff)
-0x9f  gsSPEndDisplayList()
-0xa0  gsDPPipeSync()
-0xa1  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0x0, B = 0xff, A = 0xff)
-0xa2  gsDPSetEnvColor(R = 0x64, G = 0x0, B = 0x64, A = 0xff)
-0xa3  gsSPEndDisplayList()
-0xa4  gsDPPipeSync()
-0xa5  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
-0xa6  gsDPSetEnvColor(R = 0x78, G = 0x5a, B = 0x0, A = 0xff)
-0xa7  gsSPEndDisplayList()
-0xa8  gsDPPipeSync()
-0xa9  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
-0xaa  gsDPSetEnvColor(R = 0x64, G = 0xff, B = 0x0, A = 0xff)
-0xab  gsSPEndDisplayList()
-0xac  gsDPPipeSync()
-0xad  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xaa, G = 0xff, B = 0xff, A = 0xff)
-0xae  gsDPSetEnvColor(R = 0x0, G = 0x64, B = 0xff, A = 0xff)
-0xaf  gsSPEndDisplayList()
-0xb0  gsDPPipeSync()
-0xb1  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
-0xb2  gsDPSetEnvColor(R = 0xff, G = 0x0, B = 0x0, A = 0xff)
-0xb3  gsSPEndDisplayList()
-0xb4  gsDPPipeSync()
-0xb5  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xaa, B = 0xff, A = 0xff)
-0xb6  gsDPSetEnvColor(R = 0x64, G = 0x0, B = 0x96, A = 0xff)
-0xb7  gsSPEndDisplayList()
-0xb8  gsDPPipeSync()
-0xb9  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
-0xba  gsDPSetEnvColor(R = 0xff, G = 0xff, B = 0x0, A = 0xff)
-0xbb  gsSPEndDisplayList()
-0xbc  gsDPPipeSync()
-0xbd  gsSPSetOtherMode(const = 0xe2, shift = -0x87, length = 0x79, Idata = 0xc193078)
-0xbe  gsDPSetTile(a0 = 0x1, b0 = 0x3, c0 = 0xe, d0 = 0x1, Aa0 = 0x7, Ab0 = 0x7, Ac0 = 0x7, Ad0 = 0x6, a1 = 0x3, b1 = 0x5, c1 = 0x0, d1 = 0x5, Aa1 = 0x7, Ab1 = 0x7, Ac1 = 0x7, Ad1 = 0x2)
-0xbf  gsSPSetOtherMode(const = 0xe3, sIhift = 0x21, length = 0x1, data = 0x0)
-0xc0  gsSPTexture(scaleS = 0x20d, scaleT = 0xac0d, level = 0x4, tile = 0x0, on = 0x0)
-0xc1  gsDPSetTextureImage(fmt = 0x0, siz = 0x0, width = 0x0, imgaddr = 0x4032930)
-0xc2  gsDPSetTile(fmt = 0x4, siz = 0x2, line = 0x0, tmem = 0x0, tile = 0x7, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0x0, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
-0xc3  gsDPLoadSync()
-0xc4  gsDPLoadBlock(tile = 0x7, uls = 0x0, ult = 0x0, texels = 0x1ff, dxt = 0x200)
-0xc5  gsDPPipeSync()
-0xc6  gsDPSetTile(fmt = 0x4, siz = 0x1, line = 0x4, tmem = 0x0, tile = 0x0, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0x0, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
-0xc7  gsDPSetTileSize(tile = 0x0, uls = 0x0, ult = 0x0, lrs = 0x7c, lrt = 0x7c)
-0xc8  gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
-0xc9  gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
-0xca  gsSPVertex(vaddr = 0x6000000, numv = 0x6, vbidx = 0x6)
-0xcb  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
-0xcc  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
-0xcd  gsSPVertex(vaddr = 0x6000060, numv = 0x20, vbidx = 0x1e)
-0xce  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
-0xcf  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
-0xd0  gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
-0xd1  gsSP2Triangle(v00 = 10.0, v01 = 11.0, v02 = 12.0, v10 = 10.0, v11 = 12.0, v12 = 13.0)
-0xd2  gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
-0xd3  gsSP2Triangle(v00 = 15.0, v01 = 14.0, v02 = 16.0, v10 = 15.0, v11 = 16.0, v12 = 17.0)
-0xd4  gsSP2Triangle(v00 = 18.0, v01 = 19.0, v02 = 20.0, v10 = 18.0, v11 = 20.0, v12 = 21.0)
-0xd5  gsSP2Triangle(v00 = 19.0, v01 = 7.0, v02 = 6.0, v10 = 19.0, v11 = 6.0, v12 = 20.0)
-0xd6  gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 24.0, v10 = 22.0, v11 = 24.0, v12 = 25.0)
-0xd7  gsSP2Triangle(v00 = 25.0, v01 = 24.0, v02 = 26.0, v10 = 25.0, v11 = 26.0, v12 = 27.0)
-0xd8  gsSP2Triangle(v00 = 27.0, v01 = 26.0, v02 = 28.0, v10 = 27.0, v11 = 28.0, v12 = 29.0)
-0xd9  gsSPVertex(vaddr = 0x6000240, numv = 0x8, vbidx = 0x8)
-0xda  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
-0xdb  gsSP2Triangle(v00 = 1.0, v01 = 4.0, v02 = 5.0, v10 = 1.0, v11 = 5.0, v12 = 2.0)
-0xdc  gsSP2Triangle(v00 = 4.0, v01 = 6.0, v02 = 7.0, v10 = 4.0, v11 = 7.0, v12 = 5.0)
-0xdd  gsSPEndDisplayList()
-0xde  gsDPPipeSync()
-0xdf  gsSPSetOtherMode(const = 0xe2, shift = -0x100, length = 0xd9, Idata = 0xc1849d8)
-0xe0  gsDPSetTile(a0 = 0x1, b0 = 0x3, c0 = 0xe, d0 = 0x1, Aa0 = 0x7, Ab0 = 0x7, Ac0 = 0x7, Ad0 = 0x1, a1 = 0x3, b1 = 0x5, c1 = 0x0, d1 = 0x5, Aa1 = 0x7, Ab1 = 0x7, Ac1 = 0x7, Ad1 = 0x0)
-0xe1  gsSPSetOtherMode(const = 0xe3, sIhift = 0x21, length = 0x1, data = 0x0)
-0xe2  gsSPTexture(scaleS = 0x20b, scaleT = 0xb807, level = 0x2, tile = 0x0, on = 0x0)
-0xe3  gsDPSetTextureImage(fmt = 0x0, siz = 0x0, width = 0x0, imgaddr = 0x4032930)
-0xe4  gsDPSetTile(fmt = 0x4, siz = 0x2, line = 0x0, tmem = 0x0, tile = 0x7, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0xf, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
-0xe5  gsDPLoadSync()
-0xe6  gsDPLoadBlock(tile = 0x7, uls = 0x0, ult = 0x0, texels = 0x1ff, dxt = 0x200)
-0xe7  gsDPPipeSync()
-0xe8  gsDPSetTile(fmt = 0x4, siz = 0x1, line = 0x4, tmem = 0x0, tile = 0x0, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0xf, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
-0xe9  gsDPSetTileSize(tile = 0x0, uls = 0x0, ult = 0x0, lrs = 0x7c, lrt = 0x7c)
-0xea  gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
-0xeb  gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
-0xec  gsSPVertex(vaddr = 0x60002c0, numv = 0x6, vbidx = 0x6)
-0xed  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
-0xee  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
-0xef  gsSPVertex(vaddr = 0x6000320, numv = 0x18, vbidx = 0x17)
-0xf0  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
-0xf1  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
-0xf2  gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
-0xf3  gsSP2Triangle(v00 = 9.0, v01 = 8.0, v02 = 10.0, v10 = 9.0, v11 = 10.0, v12 = 11.0)
-0xf4  gsSP2Triangle(v00 = 11.0, v01 = 10.0, v02 = 12.0, v10 = 11.0, v11 = 12.0, v12 = 13.0)
-0xf5  gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
-0xf6  gsSP2Triangle(v00 = 14.0, v01 = 16.0, v02 = 17.0, v10 = 14.0, v11 = 17.0, v12 = 15.0)
-0xf7  gsSP2Triangle(v00 = 16.0, v01 = 7.0, v02 = 6.0, v10 = 16.0, v11 = 6.0, v12 = 17.0)
-0xf8  gsSP2Triangle(v00 = 0.0, v01 = 18.0, v02 = 19.0, v10 = 0.0, v11 = 19.0, v12 = 1.0)
-0xf9  gsSP2Triangle(v00 = 1.0, v01 = 19.0, v02 = 20.0, v10 = 1.0, v11 = 20.0, v12 = 2.0)
-0xfa  gsSP2Triangle(v00 = 2.0, v01 = 20.0, v02 = 21.0, v10 = 2.0, v11 = 21.0, v12 = 3.0)
-0xfb  gsSP2Triangle(v00 = 21.0, v01 = 22.0, v02 = 4.0, v10 = 21.0, v11 = 4.0, v12 = 3.0)
-0xfc  gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 5.0, v10 = 22.0, v11 = 5.0, v12 = 4.0)
-0xfd  gsSP2Triangle(v00 = 23.0, v01 = 18.0, v02 = 0.0, v10 = 23.0, v11 = 0.0, v12 = 5.0)
-0xfe  gsSPEndDisplayList()
-0xff  gsDPNoOpTag(tag = 0x0)
+0x0000  0xfff80008000a0000   -- VERTEX DATA (0xca) -- 0xfff80008000a0000
+0x0001  0x0092054a000078ff   -- VERTEX DATA (0xca) -- 0x0092054a000078ff
+0x0002  0xfff8fff8000a0000   -- VERTEX DATA (0xca) -- 0xfff8fff8000a0000
+0x0003  0x009206b6000078ff   -- VERTEX DATA (0xca) -- 0x009206b6000078ff
+0x0004  0x0000fff0000a0000   -- VERTEX DATA (0xca) -- 0x0000fff0000a0000
+0x0005  0x0100074a000078ff   -- VERTEX DATA (0xca) -- 0x0100074a000078ff
+0x0006  0x0008fff8000a0000  -- Unknown -- 0x0008fff8000a0000
+0x0007  0x016e06b6000078ff  -- Unknown -- 0x016e06b6000078ff
+0x0008  0x00080008000a0000  -- Unknown -- 0x00080008000a0000
+0x0009  0x016e054a000078ff  -- Unknown -- 0x016e054a000078ff
+0x000a  0x00000010000a0000  -- Unknown -- 0x00000010000a0000
+0x000b  0x010004b6000078ff  -- Unknown -- 0x010004b6000078ff
+0x000c  0x00000010fff60000   -- VERTEX DATA (0xcd) -- 0x00000010fff60000
+0x000d  0x030004b6000088ff   -- VERTEX DATA (0xcd) -- 0x030004b6000088ff
+0x000e  0x00080008fff60000   -- VERTEX DATA (0xcd) -- 0x00080008fff60000
+0x000f  0x0292054a000088ff   -- VERTEX DATA (0xcd) -- 0x0292054a000088ff
+0x0010  0x0008fff8fff60000   -- VERTEX DATA (0xcd) -- 0x0008fff8fff60000
+0x0011  0x029206b6000088ff   -- VERTEX DATA (0xcd) -- 0x029206b6000088ff
+0x0012  0x0000fff0fff60000   -- VERTEX DATA (0xcd) -- 0x0000fff0fff60000
+0x0013  0x0300074a000088ff   -- VERTEX DATA (0xcd) -- 0x0300074a000088ff
+0x0014  0xfff8fff8fff60000   -- VERTEX DATA (0xcd) -- 0xfff8fff8fff60000
+0x0015  0x036e06b6000088ff   -- VERTEX DATA (0xcd) -- 0x036e06b6000088ff
+0x0016  0xfff80008fff60000   -- VERTEX DATA (0xcd) -- 0xfff80008fff60000
+0x0017  0x036e054a000088ff   -- VERTEX DATA (0xcd) -- 0x036e054a000088ff
+0x0018  0x00080008000a0000   -- VERTEX DATA (0xcd) -- 0x00080008000a0000
+0x0019  0x016e054a512052ff   -- VERTEX DATA (0xcd) -- 0x016e054a512052ff
+0x001a  0x0010000c00000000   -- VERTEX DATA (0xcd) -- 0x0010000c00000000
+0x001b  0x0200052e512052ff   -- VERTEX DATA (0xcd) -- 0x0200052e512052ff
+0x001c  0x0000001e00000000   -- VERTEX DATA (0xcd) -- 0x0000001e00000000
+0x001d  0x017a04003d3d53ff   -- VERTEX DATA (0xcd) -- 0x017a04003d3d53ff
+0x001e  0x00000010000a0000   -- VERTEX DATA (0xcd) -- 0x00000010000a0000
+0x001f  0x010004b63d3d53ff   -- VERTEX DATA (0xcd) -- 0x010004b63d3d53ff
+0x0020  0x00000010000a0000   -- VERTEX DATA (0xcd) -- 0x00000010000a0000
+0x0021  0x010004b6bd3d4eff   -- VERTEX DATA (0xcd) -- 0x010004b6bd3d4eff
+0x0022  0x0000001e00000000   -- VERTEX DATA (0xcd) -- 0x0000001e00000000
+0x0023  0x00860400bd3d4eff   -- VERTEX DATA (0xcd) -- 0x00860400bd3d4eff
+0x0024  0xfff0000c00000000   -- VERTEX DATA (0xcd) -- 0xfff0000c00000000
+0x0025  0x0000052ead204fff   -- VERTEX DATA (0xcd) -- 0x0000052ead204fff
+0x0026  0xfff80008000a0000   -- VERTEX DATA (0xcd) -- 0xfff80008000a0000
+0x0027  0x0092054aad204fff   -- VERTEX DATA (0xcd) -- 0x0092054aad204fff
+0x0028  0xfff0fff400000000   -- VERTEX DATA (0xcd) -- 0xfff0fff400000000
+0x0029  0x000006d2ade04fff   -- VERTEX DATA (0xcd) -- 0x000006d2ade04fff
+0x002a  0xfff8fff8000a0000   -- VERTEX DATA (0xcd) -- 0xfff8fff8000a0000
+0x002b  0x009206b6ade04fff   -- VERTEX DATA (0xcd) -- 0x009206b6ade04fff
+0x002c  0x0000ffe200000000  -- Unknown -- 0x0000ffe200000000
+0x002d  0x00860400bdc34eff  -- Unknown -- 0x00860400bdc34eff
+0x002e  0x0000fff0000a0000  -- Unknown -- 0x0000fff0000a0000
+0x002f  0x0100074abdc34eff  -- Unknown -- 0x0100074abdc34eff
+0x0030  0x0000ffe200000000  -- Unknown -- 0x0000ffe200000000
+0x0031  0x017a04003dc353ff  -- Unknown -- 0x017a04003dc353ff
+0x0032  0x0010fff400000000  -- Unknown -- 0x0010fff400000000
+0x0033  0x020006d251e052ff  gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x51e052ff)
+0x0034  0x0008fff8000a0000  -- Unknown -- 0x0008fff8000a0000
+0x0035  0x016e06b651e052ff  -- Unknown -- 0x016e06b651e052ff
+0x0036  0x0000fff0000a0000  -- Unknown -- 0x0000fff0000a0000
+0x0037  0x0100074a3dc353ff  -- Unknown -- 0x0100074a3dc353ff
+0x0038  0x00000010fff60000  -- Unknown -- 0x00000010fff60000
+0x0039  0x030004b6413bafff  -- Unknown -- 0x030004b6413bafff
+0x003a  0x0000001e00000000  -- Unknown -- 0x0000001e00000000
+0x003b  0x02860400413bafff  gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x413bafff)
+0x003c  0x0010000c00000000  -- Unknown -- 0x0010000c00000000
+0x003d  0x0200052e521fafff  gsSPModifyVertex(vbidx = 663.0, where = 0x0, val = 0x521fafff)
+0x003e  0x00080008fff60000  -- Unknown -- 0x00080008fff60000
+0x003f  0x0292054a521fafff  gsSPModifyVertex(vbidx = 677.0, where = 0x92, val = 0x521fafff)
+0x0040  0x0010fff400000000  -- Unknown -- 0x0010fff400000000
+0x0041  0x020006d252e1afff  gsSPModifyVertex(vbidx = 873.0, where = 0x0, val = 0x52e1afff)
+0x0042  0x0008fff8fff60000  -- Unknown -- 0x0008fff8fff60000
+0x0043  0x029206b652e1afff  gsSPModifyVertex(vbidx = 859.0, where = 0x92, val = 0x52e1afff)
+0x0044  0x0000ffe200000000  -- Unknown -- 0x0000ffe200000000
+0x0045  0x0286040041c5afff  gsSPModifyVertex(vbidx = 512.0, where = 0x86, val = 0x41c5afff)
+0x0046  0x0000fff0fff60000  -- Unknown -- 0x0000fff0fff60000
+0x0047  0x0300074a41c5afff  -- Unknown -- 0x0300074a41c5afff
+0x0048  0x0000ffe200000000   -- VERTEX DATA (0xd9) -- 0x0000ffe200000000
+0x0049  0xff7a0400bdc3b2ff   -- VERTEX DATA (0xd9) -- 0xff7a0400bdc3b2ff
+0x004a  0xfff0fff400000000   -- VERTEX DATA (0xd9) -- 0xfff0fff400000000
+0x004b  0x000006d2ade0b1ff   -- VERTEX DATA (0xd9) -- 0x000006d2ade0b1ff
+0x004c  0xfff8fff8fff60000   -- VERTEX DATA (0xd9) -- 0xfff8fff8fff60000
+0x004d  0xff6e06b6ade0b1ff   -- VERTEX DATA (0xd9) -- 0xff6e06b6ade0b1ff
+0x004e  0x0000fff0fff60000   -- VERTEX DATA (0xd9) -- 0x0000fff0fff60000
+0x004f  0xff00074abdc3b2ff   -- VERTEX DATA (0xd9) -- 0xff00074abdc3b2ff
+0x0050  0xfff0000c00000000  gsDPSetColorImage(fmt = 0x7, siz = 0x2, width = 0xd, imgaddr = 0x0)
+0x0051  0x0000052ead20b1ff  -- Unknown -- 0x0000052ead20b1ff
+0x0052  0xfff80008fff60000  gsDPSetColorImage(fmt = 0x7, siz = 0x3, width = 0x9, imgaddr = 0xfff60000)
+0x0053  0xff6e054aad20b1ff  gsDPSetColorImage(fmt = 0x3, siz = 0x1, width = 0x54b, imgaddr = 0xad20b1ff)
+0x0054  0x0000001e00000000  -- Unknown -- 0x0000001e00000000
+0x0055  0xff7a0400bd3db2ff  gsDPSetColorImage(fmt = 0x3, siz = 0x3, width = 0x401, imgaddr = 0xbd3db2ff)
+0x0056  0x00000010fff60000  -- Unknown -- 0x00000010fff60000
+0x0057  0xff0004b6bd3db2ff  gsDPSetColorImage(fmt = 0x0, siz = 0x0, width = 0x4b7, imgaddr = 0xbd3db2ff)
+0x0058  0xfff6000a000d0000   -- VERTEX DATA (0xec) -- 0xfff6000a000d0000
+0x0059  0x0095054ec31764ff   -- VERTEX DATA (0xec) -- 0x0095054ec31764ff
+0x005a  0xfff6fff6000d0000   -- VERTEX DATA (0xec) -- 0xfff6fff6000d0000
+0x005b  0x009506b2c3e964ff   -- VERTEX DATA (0xec) -- 0x009506b2c3e964ff
+0x005c  0x0000ffec000d0000   -- VERTEX DATA (0xec) -- 0x0000ffec000d0000
+0x005d  0x01000744fecf6dff   -- VERTEX DATA (0xec) -- 0x01000744fecf6dff
+0x005e  0x000afff6000d0000  -- Unknown -- 0x000afff6000d0000
+0x005f  0x016b06b23ae966ff  -- Unknown -- 0x016b06b23ae966ff
+0x0060  0x000a000a000d0000  -- Unknown -- 0x000a000a000d0000
+0x0061  0x016b054e3a1766ff  -- Unknown -- 0x016b054e3a1766ff
+0x0062  0x00000014000d0000  -- Unknown -- 0x00000014000d0000
+0x0063  0x010004bcfe316dff  -- Unknown -- 0x010004bcfe316dff
+0x0064  0x00000014fff30000   -- VERTEX DATA (0xef) -- 0x00000014fff30000
+0x0065  0x030004bcff3193ff   -- VERTEX DATA (0xef) -- 0x030004bcff3193ff
+0x0066  0x000a000afff30000   -- VERTEX DATA (0xef) -- 0x000a000afff30000
+0x0067  0x0295054e3c169bff   -- VERTEX DATA (0xef) -- 0x0295054e3c169bff
+0x0068  0x000afff6fff30000   -- VERTEX DATA (0xef) -- 0x000afff6fff30000
+0x0069  0x029506b23cea9bff   -- VERTEX DATA (0xef) -- 0x029506b23cea9bff
+0x006a  0x0000ffecfff30000   -- VERTEX DATA (0xef) -- 0x0000ffecfff30000
+0x006b  0x03000744ffcf93ff   -- VERTEX DATA (0xef) -- 0x03000744ffcf93ff
+0x006c  0xfff6fff6fff30000   -- VERTEX DATA (0xef) -- 0xfff6fff6fff30000
+0x006d  0x036b06b2c3e99cff   -- VERTEX DATA (0xef) -- 0x036b06b2c3e99cff
+0x006e  0xfff6000afff30000   -- VERTEX DATA (0xef) -- 0xfff6000afff30000
+0x006f  0x036b054ec3179cff   -- VERTEX DATA (0xef) -- 0x036b054ec3179cff
+0x0070  0x000a000a000d0000   -- VERTEX DATA (0xef) -- 0x000a000a000d0000
+0x0071  0x016b054e3a1766ff   -- VERTEX DATA (0xef) -- 0x016b054e3a1766ff
+0x0072  0x0014000f00000000   -- VERTEX DATA (0xef) -- 0x0014000f00000000
+0x0073  0x01e805304f5a01ff   -- VERTEX DATA (0xef) -- 0x01e805304f5a01ff
+0x0074  0x0000002500000000   -- VERTEX DATA (0xef) -- 0x0000002500000000
+0x0075  0x0100041afe7701ff   -- VERTEX DATA (0xef) -- 0x0100041afe7701ff
+0x0076  0x00000014000d0000   -- VERTEX DATA (0xef) -- 0x00000014000d0000
+0x0077  0x010004bcfe316dff   -- VERTEX DATA (0xef) -- 0x010004bcfe316dff
+0x0078  0xffec000f00000000   -- VERTEX DATA (0xef) -- 0xffec000f00000000
+0x0079  0x00180530b05900ff   -- VERTEX DATA (0xef) -- 0x00180530b05900ff
+0x007a  0xfff6000a000d0000   -- VERTEX DATA (0xef) -- 0xfff6000a000d0000
+0x007b  0x0095054ec31764ff   -- VERTEX DATA (0xef) -- 0x0095054ec31764ff
+0x007c  0xffecfff100000000  -- Unknown -- 0xffecfff100000000
+0x007d  0x001806d08f2800ff  -- Unknown -- 0x001806d08f2800ff
+0x007e  0xfff6fff6000d0000  -- Unknown -- 0xfff6fff6000d0000
+0x007f  0x009506b2c3e964ff  -- Unknown -- 0x009506b2c3e964ff
+0x0080  0x0000ffdb00000000  -- Unknown -- 0x0000ffdb00000000
+0x0081  0x010007e6aab018ff  -- Unknown -- 0x010007e6aab018ff
+0x0082  0x0000ffec000d0000  -- Unknown -- 0x0000ffec000d0000
+0x0083  0x01000744fecf6dff  -- Unknown -- 0x01000744fecf6dff
+0x0084  0x0014fff100000000  -- Unknown -- 0x0014fff100000000
+0x0085  0x01e806d0702901ff  -- Unknown -- 0x01e806d0702901ff
+0x0086  0x000afff6000d0000  -- Unknown -- 0x000afff6000d0000
+0x0087  0x016b06b23ae966ff  -- Unknown -- 0x016b06b23ae966ff
+0x0088  0x0000002500000000  -- Unknown -- 0x0000002500000000
+0x0089  0x0300041afe7701ff  -- Unknown -- 0x0300041afe7701ff
+0x008a  0x0014000f00000000  -- Unknown -- 0x0014000f00000000
+0x008b  0x021805304f5a01ff  gsSPModifyVertex(vbidx = 664.0, where = 0x18, val = 0x4f5a01ff)
+0x008c  0x0014fff100000000  -- Unknown -- 0x0014fff100000000
+0x008d  0x021806d0702901ff  gsSPModifyVertex(vbidx = 872.0, where = 0x18, val = 0x702901ff)
+0x008e  0x0000ffdb00000000  -- Unknown -- 0x0000ffdb00000000
+0x008f  0x030007e6aab018ff  -- Unknown -- 0x030007e6aab018ff
+0x0090  0xffecfff100000000  -- Unknown -- 0xffecfff100000000
+0x0091  0x03e806d08f2800ff  -- Unknown -- 0x03e806d08f2800ff
+0x0092  0xffec000f00000000  gsDPSetColorImage(fmt = 0x7, siz = 0x1, width = 0x10, imgaddr = 0x0)
+0x0093  0x03e80530b05900ff  -- Unknown -- 0x03e80530b05900ff
+0x0094  0xe700000000000000  gsDPPipeSync()
+0x0095  0xfa000080c8ff00ff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xc8, G = 0xff, B = 0x0, A = 0xff)
+0x0096  0xfb000000007800ff  gsDPSetEnvColor(R = 0x0, G = 0x78, B = 0x0, A = 0xff)
+0x0097  0xdf00000000000000  gsSPEndDisplayList()
+0x0098  0xe700000000000000  gsDPPipeSync()
+0x0099  0xfa00008000c8ffff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0x0, G = 0xc8, B = 0xff, A = 0xff)
+0x009a  0xfb000000000078ff  gsDPSetEnvColor(R = 0x0, G = 0x0, B = 0x78, A = 0xff)
+0x009b  0xdf00000000000000  gsSPEndDisplayList()
+0x009c  0xe700000000000000  gsDPPipeSync()
+0x009d  0xfa000080ffc800ff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xc8, B = 0x0, A = 0xff)
+0x009e  0xfb000000820000ff  gsDPSetEnvColor(R = 0x82, G = 0x0, B = 0x0, A = 0xff)
+0x009f  0xdf00000000000000  gsSPEndDisplayList()
+0x00a0  0xe700000000000000  gsDPPipeSync()
+0x00a1  0xfa000080ff00ffff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0x0, B = 0xff, A = 0xff)
+0x00a2  0xfb000000640064ff  gsDPSetEnvColor(R = 0x64, G = 0x0, B = 0x64, A = 0xff)
+0x00a3  0xdf00000000000000  gsSPEndDisplayList()
+0x00a4  0xe700000000000000  gsDPPipeSync()
+0x00a5  0xfa000080ffffaaff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
+0x00a6  0xfb000000785a00ff  gsDPSetEnvColor(R = 0x78, G = 0x5a, B = 0x0, A = 0xff)
+0x00a7  0xdf00000000000000  gsSPEndDisplayList()
+0x00a8  0xe700000000000000  gsDPPipeSync()
+0x00a9  0xfa000080ffffaaff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
+0x00aa  0xfb00000064ff00ff  gsDPSetEnvColor(R = 0x64, G = 0xff, B = 0x0, A = 0xff)
+0x00ab  0xdf00000000000000  gsSPEndDisplayList()
+0x00ac  0xe700000000000000  gsDPPipeSync()
+0x00ad  0xfa000080aaffffff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xaa, G = 0xff, B = 0xff, A = 0xff)
+0x00ae  0xfb0000000064ffff  gsDPSetEnvColor(R = 0x0, G = 0x64, B = 0xff, A = 0xff)
+0x00af  0xdf00000000000000  gsSPEndDisplayList()
+0x00b0  0xe700000000000000  gsDPPipeSync()
+0x00b1  0xfa000080ffffaaff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
+0x00b2  0xfb000000ff0000ff  gsDPSetEnvColor(R = 0xff, G = 0x0, B = 0x0, A = 0xff)
+0x00b3  0xdf00000000000000  gsSPEndDisplayList()
+0x00b4  0xe700000000000000  gsDPPipeSync()
+0x00b5  0xfa000080ffaaffff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xaa, B = 0xff, A = 0xff)
+0x00b6  0xfb000000640096ff  gsDPSetEnvColor(R = 0x64, G = 0x0, B = 0x96, A = 0xff)
+0x00b7  0xdf00000000000000  gsSPEndDisplayList()
+0x00b8  0xe700000000000000  gsDPPipeSync()
+0x00b9  0xfa000080ffffaaff  gsDPSetPrimColor(minlevel = 0x0, lodfrac = 0x80, R = 0xff, G = 0xff, B = 0xaa, A = 0xff)
+0x00ba  0xfb000000ffff00ff  gsDPSetEnvColor(R = 0xff, G = 0xff, B = 0x0, A = 0xff)
+0x00bb  0xdf00000000000000  gsSPEndDisplayList()
+0x00bc  0xe700000000000000  gsDPPipeSync()
+0x00bd  0xe200001c0c193078  gsSPSetOtherMode(const = 0xe2, shift = -0x87, length = 0x79, data = 0xc193078)
+0x00be  0xfc177e6035fcfd7e  gsDPSetTile(a0 = 0x1, b0 = 0x3, c0 = 0xe, d0 = 0x1, Aa0 = 0x7, Ab0 = 0x7, Ac0 = 0x7, Ad0 = 0x6, a1 = 0x3, b1 = 0x5, c1 = 0x0, d1 = 0x5, Aa1 = 0x7, Ab1 = 0x7, Ac1 = 0x7, Ad1 = 0x2)
+0x00bf  0xe300100100000000  gsSPSetOtherMode(const = 0xe3, shift = 0x21, length = 0x1, data = 0x0)
+0x00c0  0xd70000020dac0dac  gsSPTexture(scaleS = 0xdac, scaleT = 0xdac, level = 0x4, tile = 0x20, on = 0x0)
+0x00c1  0xfd90000004032930  gsDPSetTextureImage(fmt = 0x4, siz = 0x2, width = 0x1, imgaddr = 0x4032930)
+0x00c2  0xf590000007014050  gsDPSetTile(fmt = 0x4, siz = 0x2, line = 0x0, tmem = 0x0, tile = 0x7, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0x0, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
+0x00c3  0xe600000000000000  gsDPLoadSync()
+0x00c4  0xf3000000071ff200  gsDPLoadBlock(tile = 0x7, uls = 0x0, ult = 0x0, texels = 0x1ff, dxt = 0x200)
+0x00c5  0xe700000000000000  gsDPPipeSync()
+0x00c6  0xf588080000014050  gsDPSetTile(fmt = 0x4, siz = 0x1, line = 0x4, tmem = 0x0, tile = 0x0, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0x0, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
+0x00c7  0xf20000000007c07c  gsDPSetTileSize(tile = 0x0, uls = 0x0, ult = 0x0, lrs = 0x7c, lrt = 0x7c)
+0x00c8  0xd9feffff00000000  gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
+0x00c9  0xd9ffffff000e0400  gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
+0x00ca  0x0100600c06000000  gsSPVertex(vaddr = 0x6000000, numv = 0x6, vbidx = 0x6)
+0x00cb  0x0600020400000406  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0x00cc  0x060006080000080a  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0x00cd  0x0102004006000060  gsSPVertex(vaddr = 0x6000060, numv = 0x20, vbidx = 0x1e)
+0x00ce  0x0600020400000406  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0x00cf  0x060006080000080a  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0x00d0  0x060c0e10000c1012  gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
+0x00d1  0x061416180014181a  gsSP2Triangle(v00 = 10.0, v01 = 11.0, v02 = 12.0, v10 = 10.0, v11 = 12.0, v12 = 13.0)
+0x00d2  0x061a181c001a1c1e  gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
+0x00d3  0x061e1c20001e2022  gsSP2Triangle(v00 = 15.0, v01 = 14.0, v02 = 16.0, v10 = 15.0, v11 = 16.0, v12 = 17.0)
+0x00d4  0x062426280024282a  gsSP2Triangle(v00 = 18.0, v01 = 19.0, v02 = 20.0, v10 = 18.0, v11 = 20.0, v12 = 21.0)
+0x00d5  0x06260e0c00260c28  gsSP2Triangle(v00 = 19.0, v01 = 7.0, v02 = 6.0, v10 = 19.0, v11 = 6.0, v12 = 20.0)
+0x00d6  0x062c2e30002c3032  gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 24.0, v10 = 22.0, v11 = 24.0, v12 = 25.0)
+0x00d7  0x0632303400323436  gsSP2Triangle(v00 = 25.0, v01 = 24.0, v02 = 26.0, v10 = 25.0, v11 = 26.0, v12 = 27.0)
+0x00d8  0x063634380036383a  gsSP2Triangle(v00 = 27.0, v01 = 26.0, v02 = 28.0, v10 = 27.0, v11 = 28.0, v12 = 29.0)
+0x00d9  0x0100801006000240  gsSPVertex(vaddr = 0x6000240, numv = 0x8, vbidx = 0x8)
+0x00da  0x0600020400000406  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0x00db  0x0602080a00020a04  gsSP2Triangle(v00 = 1.0, v01 = 4.0, v02 = 5.0, v10 = 1.0, v11 = 5.0, v12 = 2.0)
+0x00dc  0x06080c0e00080e0a  gsSP2Triangle(v00 = 4.0, v01 = 6.0, v02 = 7.0, v10 = 4.0, v11 = 7.0, v12 = 5.0)
+0x00dd  0xdf00000000000000  gsSPEndDisplayList()
+0x00de  0xe700000000000000  gsDPPipeSync()
+0x00df  0xe200001c0c1849d8  gsSPSetOtherMode(const = 0xe2, shift = -0x100, length = 0xd9, data = 0xc1849d8)
+0x00e0  0xfc177e6035fcf378  gsDPSetTile(a0 = 0x1, b0 = 0x3, c0 = 0xe, d0 = 0x1, Aa0 = 0x7, Ab0 = 0x7, Ac0 = 0x7, Ad0 = 0x1, a1 = 0x3, b1 = 0x5, c1 = 0x0, d1 = 0x5, Aa1 = 0x7, Ab1 = 0x7, Ac1 = 0x7, Ad1 = 0x0)
+0x00e1  0xe300100100000000  gsSPSetOtherMode(const = 0xe3, shift = 0x21, length = 0x1, data = 0x0)
+0x00e2  0xd70000020bb807d0  gsSPTexture(scaleS = 0xbb8, scaleT = 0x7d0, level = 0x0, tile = 0x0, on = 0x0)
+0x00e3  0xfd90000004032930  gsDPSetTextureImage(fmt = 0x4, siz = 0x2, width = 0x1, imgaddr = 0x4032930)
+0x00e4  0xf590000007017c50  gsDPSetTile(fmt = 0x4, siz = 0x2, line = 0x0, tmem = 0x0, tile = 0x7, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0xf, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
+0x00e5  0xe600000000000000  gsDPLoadSync()
+0x00e6  0xf3000000071ff200  gsDPLoadBlock(tile = 0x7, uls = 0x0, ult = 0x0, texels = 0x1ff, dxt = 0x200)
+0x00e7  0xe700000000000000  gsDPPipeSync()
+0x00e8  0xf588080000017c50  gsDPSetTile(fmt = 0x4, siz = 0x1, line = 0x4, tmem = 0x0, tile = 0x0, palette = 0x0, cmT = 0x0, maskT = 0x5, shiftT = 0xf, cmS = 0x0, maskS = 0x5, shiftS = 0x0)
+0x00e9  0xf20000000007c07c  gsDPSetTileSize(tile = 0x0, uls = 0x0, ult = 0x0, lrs = 0x7c, lrt = 0x7c)
+0x00ea  0xd9feffff00000000  gsSPGeomentryMode(clearbits = -0xff0000, setbits = 0x0)
+0x00eb  0xd9ffffff000e0400  gsSPGeomentryMode(clearbits = -0x1000000, setbits = 0xe0400)
+0x00ec  0x0100600c060002c0  gsSPVertex(vaddr = 0x60002c0, numv = 0x6, vbidx = 0x6)
+0x00ed  0x0600020400000406  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0x00ee  0x060006080000080a  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0x00ef  0x0101803006000320  gsSPVertex(vaddr = 0x6000320, numv = 0x18, vbidx = 0x17)
+0x00f0  0x0600020400000406  gsSP2Triangle(v00 = 0.0, v01 = 1.0, v02 = 2.0, v10 = 0.0, v11 = 2.0, v12 = 3.0)
+0x00f1  0x060006080000080a  gsSP2Triangle(v00 = 0.0, v01 = 3.0, v02 = 4.0, v10 = 0.0, v11 = 4.0, v12 = 5.0)
+0x00f2  0x060c0e10000c1012  gsSP2Triangle(v00 = 6.0, v01 = 7.0, v02 = 8.0, v10 = 6.0, v11 = 8.0, v12 = 9.0)
+0x00f3  0x0612101400121416  gsSP2Triangle(v00 = 9.0, v01 = 8.0, v02 = 10.0, v10 = 9.0, v11 = 10.0, v12 = 11.0)
+0x00f4  0x061614180016181a  gsSP2Triangle(v00 = 11.0, v01 = 10.0, v02 = 12.0, v10 = 11.0, v11 = 12.0, v12 = 13.0)
+0x00f5  0x061a181c001a1c1e  gsSP2Triangle(v00 = 13.0, v01 = 12.0, v02 = 14.0, v10 = 13.0, v11 = 14.0, v12 = 15.0)
+0x00f6  0x061c2022001c221e  gsSP2Triangle(v00 = 14.0, v01 = 16.0, v02 = 17.0, v10 = 14.0, v11 = 17.0, v12 = 15.0)
+0x00f7  0x06200e0c00200c22  gsSP2Triangle(v00 = 16.0, v01 = 7.0, v02 = 6.0, v10 = 16.0, v11 = 6.0, v12 = 17.0)
+0x00f8  0x0600242600002602  gsSP2Triangle(v00 = 0.0, v01 = 18.0, v02 = 19.0, v10 = 0.0, v11 = 19.0, v12 = 1.0)
+0x00f9  0x0602262800022804  gsSP2Triangle(v00 = 1.0, v01 = 19.0, v02 = 20.0, v10 = 1.0, v11 = 20.0, v12 = 2.0)
+0x00fa  0x0604282a00042a06  gsSP2Triangle(v00 = 2.0, v01 = 20.0, v02 = 21.0, v10 = 2.0, v11 = 21.0, v12 = 3.0)
+0x00fb  0x062a2c08002a0806  gsSP2Triangle(v00 = 21.0, v01 = 22.0, v02 = 4.0, v10 = 21.0, v11 = 4.0, v12 = 3.0)
+0x00fc  0x062c2e0a002c0a08  gsSP2Triangle(v00 = 22.0, v01 = 23.0, v02 = 5.0, v10 = 22.0, v11 = 5.0, v12 = 4.0)
+0x00fd  0x062e2400002e000a  gsSP2Triangle(v00 = 23.0, v01 = 18.0, v02 = 0.0, v10 = 23.0, v11 = 0.0, v12 = 5.0)
+0x00fe  0xdf00000000000000  gsSPEndDisplayList()
+0x00ff  0x0000000000000000  gsDPNoOpTag(tag = 0x0)

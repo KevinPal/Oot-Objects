@@ -20,6 +20,8 @@ all_data = []
 for line in range(0, int(f_size / 8)):
     all_data.append(f.read(8))
 
+def str_hex(val):
+    return "0x" + str(hex(val))[2:].zfill(16)
 
 class Arg():
 
@@ -80,6 +82,16 @@ class Opcode():
             if i != len(self.args) - 1:
                 str_args += ", "
         return (self.name + "(" + str_args + ")" ) if not self.is_data else "-- Unknown -- 0x" + str(hex(self.raw_data))[2:].zfill(16)
+
+def check_hex(val, check):
+    str_data = list(str(hex(val))[2:].zfill(16))
+    for i in range(0, len(check)):
+        if '0' <= check[i]  <= '9':
+            if check[i] != str_data[i]:
+                return True
+                break
+    return False
+
 
 def mask(x, arg):
     val = 0
@@ -153,11 +165,11 @@ opcode_data = {
         0xD4: Opcode("G_SPECIAL_2", "D2??????????????"),
         0xD5: Opcode("G_SPECIAL_1", "D1??????????????"),
 
-        0xD7: Opcode("gsSPTexture", "D700nnssssttttBB",
-            Arg("scaleS",   lambda x: mask(x, 0x18)),
-            Arg("scaleT",   lambda x: mask(x, 0x06)),
-            Arg("level",    lambda x: (x & 0x31) >> 3),
-            Arg("tile",     lambda x: (x & 0x3)),
+        0xD7: Opcode("gsSPTexture", "D700BBnnsssstttt",
+            Arg("scaleS",   lambda x: mask(x, 0x0C)),
+            Arg("scaleT",   lambda x: mask(x, 0x03)),
+            Arg("level",    lambda x: (x & 0x20) >> 3),
+            Arg("tile",     lambda x: (x & 0x20) & 0x38),
             Arg("on",       lambda x: mask(x, 0x20))),
         0xD8: Opcode("gsSPPopMatrixN", "D8380002aaaaaaaa",
             Arg("which",    lambda x: 0),
@@ -188,16 +200,16 @@ opcode_data = {
             Arg("const",    lambda x: 0xE2),
             Arg("shift",    lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
             Arg("length",   lambda x: mask(x, 0x01) + 1),
-            Arg("Idata",    lambda x: mask(x, 0x0F))),
+            Arg("data",    lambda x: mask(x, 0x0F))),
         0xE3: Opcode("gsSPSetOtherMode", "E300ssnndddddddd",
             Arg("const",    lambda x: 0xE3),
-            Arg("sIhift",   lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
+            Arg("shift",   lambda x: 32 - mask(x, 0x02) - (mask(x, 0x01) - 1)),
             Arg("length",   lambda x: mask(x, 0x01) + 1),
             Arg("data",     lambda x: mask(x, 0x0F))),
         0xE4: Opcode("gsSPTextireRectangle", "E4xxxyyy0iXXXYYYE1000000ssssttttF1000000ddddeeee",
             Arg("ulx",      lambda x: mask(x[0], 0x06) >> 24),
             Arg("uly",      lambda x: mask(x[0], 0x03) & 0xFFF),
-            Arg("lrxI",     lambda x: mask(x[0], 0x60) >> 24),
+            Arg("lrx",     lambda x: mask(x[0], 0x60) >> 24),
             Arg("lry",      lambda x: mask(x[0], 0x30) & 0xFFF),
             Arg("tile",     lambda x: mask(x[0], 0x08)),
             Arg("uls",      lambda x: mask(x[1], 0x0C)),
@@ -302,16 +314,16 @@ opcode_data = {
             Arg("Ac1",   lambda x: (x & 0x00000000001C0000) >> ( 4*4+2)),
             Arg("Ad1",   lambda x: (x & 0x0000000000000003) >> ( 0*4+0))),
         0xFD: Opcode("gsDPSetTextureImage", "FDFS0wwwiiiiiiii",
-            Arg("fmt",      lambda x: mask(x, 0x40) >> 20),
-            Arg("siz",      lambda x: (mask(x, 0x40) >> 12) & 0x3),
-            Arg("width",    lambda x: mask(x, 0x30)),
+            Arg("fmt",      lambda x: mask(x, 0x40) >> 5),
+            Arg("siz",      lambda x: (mask(x, 0x40) >> 3) & 0x3),
+            Arg("width",    lambda x: mask(x, 0x30)+1),
             Arg("imgaddr",  lambda x: mask(x, 0x0F))),
         0xFE: Opcode("gsDPSetDepthImage", "FE000000iiiiiiii",
             Arg("imgaddr",  lambda x: mask(x, 0x0F))),
         0xFF: Opcode("gsDPSetColorImage", "FFFS0wwwiiiiiiii",
-            Arg("fmt",      lambda x: mask(x, 0x40) >> 20),
-            Arg("siz",      lambda x: (mask(x, 0x40) >> 12) & 0x3),
-            Arg("width",    lambda x: mask(x, 0x30)),
+            Arg("fmt",      lambda x: mask(x, 0x40) >> 5),
+            Arg("siz",      lambda x: (mask(x, 0x40) >> 3) & 0x3),
+            Arg("width",    lambda x: mask(x, 0x30)+1),
             Arg("imgaddr",  lambda x: mask(x, 0x0F)))
 
 
@@ -360,13 +372,14 @@ while(True):
     opcodes.append(opcode)
     raw_data.append(None if raw == None else int.from_bytes(raw, 'big'))
 
-for opcode in opcodes:
-    if opcode != None and opcode.name == "gsSPVertex" and not opcode.is_data:
+for line, opcode in enumerate(opcodes):
+    if opcode != None and opcode.name == "gsSPVertex" and not opcode.is_data and mask(opcode.vaddr, 0x08) == 0x06:
         start_offset = int(mask(opcode.vaddr, 0x07) / 8)
-        for line in range(start_offset, start_offset + opcode.numv):
-            opcodes[line] = " -- VERTEX DATA -- 0x" + str(hex(raw_data[line]))[2:].zfill(16)
+        for data_line in range(start_offset, start_offset + opcode.numv):
+            opcodes[data_line] = " -- VERTEX DATA (" + hex(line) + ") -- 0x" + str(hex(raw_data[data_line]))[2:].zfill(16)
+
 
 for line, opcode in enumerate(opcodes):
-    print(str(hex(line)) + "  " + (str(opcode) if opcode != None else " -- NO ENTRY -- 0x"+str(hex(raw_data[line]))[2:].zfill(16)))
+    print("0x" + str(hex(line)[2:].zfill(4)) + "  " + str_hex(raw_data[line]) + "  " + (str(opcode) if opcode != None else " -- NO ENTRY -- 0x"+str(hex(raw_data[line]))[2:].zfill(16)))
 
 
