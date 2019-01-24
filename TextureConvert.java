@@ -1,24 +1,29 @@
-package imgconv;
+
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.print.PrinterGraphics;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.RandomAccessFile;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Main {
+public class TextureConvert {
 
 	public static void main(String[] args) throws IOException {
 		String rompath = "D:\\Programming\\Zelda\\zootr\\Decompress\\decomp.z64";
-		String texturepath = "D:\\Programming\\Zelda\\Object Dump\\testtext.png";
+		String texturepath = "D:\\Programming\\Zelda\\Object Dump\\text3.png";
 
 		File rom = new File(rompath);
 		File texture = new File(texturepath);
@@ -27,20 +32,30 @@ public class Main {
 		int height = 64;
 
 		int gamePlayKeepStart = 0x00F03000;
-		int text_offset = 0x400;
+		int textOffset = 0x400;
 
-		viewTexture(gamePlayKeepStart + text_offset, width, height, rom); // View a texture from the rom
-		int[][] alphas = getAlphas(gamePlayKeepStart + text_offset, width, height, rom); // Get the alpha values from a
+		viewTexture(gamePlayKeepStart + textOffset, width, height, rom); // View a texture from the rom
+		int[][] alphas = getAlphas(gamePlayKeepStart + textOffset, width, height, rom); // Get the alpha values from a
 																							// texture in rom
-		convertTexture(width, height, alphas, texture); // Convert an image (gets printed out for now), using the alpha
+		byte[] data = convertTexture(width, height, alphas, texture); // Convert an image (gets printed out for now), using the alpha
 														// values from above
+		
+		writeTexture(data, gamePlayKeepStart + textOffset, rom);
 
 	}
+	
+	public static void writeTexture(byte[] data, int address, File rom) throws IOException {
+		RandomAccessFile fh = new RandomAccessFile(rom, "rw");
+		fh.seek(address);
+		fh.write(data, 0, data.length);
+		fh.close();
+	}
 
-	public static void convertTexture(int width, int height, int[][] alphas, File f) throws IOException {
+	public static byte[] convertTexture(int width, int height, int[][] alphas, File f) throws IOException {
 
 		BufferedImage out = ImageIO.read(f);
-
+		byte[] data = new byte[width * height * 2];
+		System.out.println(data.length);
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
 				int rgb = out.getRGB(x, y);
@@ -57,6 +72,8 @@ public class Main {
 				output |= ((g & 0x1F) << 6);
 				output |= ((b & 0x1F) << 1);
 				output |= alphas[y][x];
+				data[2 * (y * width + x)] = (byte) ((output & 0xFF00) >> 8);
+				data[2 * (y * width + x) + 1] = (byte) ((output & 0x00FF));
 				String outstring = Integer.toHexString(output);
 				while (outstring.length() < 4) {
 					outstring = "0" + outstring;
@@ -65,6 +82,7 @@ public class Main {
 			}
 
 		}
+		return data;
 	}
 
 	public static void viewTexture(int offset, int width, int height, File f) throws IOException {
@@ -96,6 +114,8 @@ public class Main {
 			}
 		}
 
+		inputStream.close();
+		
 		JFrame frame = new JFrame();
 		frame.add(new JLabel(new ImageIcon(image)));
 		frame.pack();
@@ -126,7 +146,7 @@ public class Main {
 				alphas[y][x] = byte2 & 0x1;
 			}
 		}
-
+		inputStream.close();
 		return alphas;
 
 	}
